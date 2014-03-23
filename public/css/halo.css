@@ -1,0 +1,348 @@
+body {
+	background-color: #005588;
+	height: 100%;
+
+	color: #FFFFFF;
+	text-align: center;
+}
+
+.white {
+	background-color: #FFFFFF;
+}
+
+.tagline {
+	margin-top: 15%;
+	opacity: 0;
+	text-align: center;
+}
+
+.taglineBlue {
+	color: #0099CC;
+	margin-top: 200px;
+	opacity: 0;
+	text-align: center;
+}
+
+.logo {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	bottom: 100px;
+	opacity: 0;
+	text-align: center;
+}
+
+.credo {
+	line-height: 30px;
+	opacity: 0;
+	text-align: center;
+	margin-top: 100px;
+	margin-left: 25%;
+	margin-right: 25%;
+	font-size: 25px;
+}
+
+.continue {
+	opacity: 0;
+	margin-top: 200px;
+	font-weight: bold;
+}
+
+.continueButton {
+	background-color: #00AA00;
+	opacity: 0;
+	margin-top: 100px;
+	margin-left: 25%;
+	margin-right: 25%;
+	width: 100px;
+	height: 50px;
+}
+
+/* clientForm */
+
+.welcome {
+	margin-top: 5%;
+	opacity: 0;
+	text-align: center;
+}
+
+.fieldHalfWrapper {
+	margin-top: 4%;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-bottom: 120px;
+}
+
+.fieldHalfLeft {
+	opacity: 0;
+	width: 47%;
+	display: inline;
+	float: left;
+}
+
+.fieldHalfRight {
+	opacity: 0;
+	margin-left: 5%;
+	width: 48%;
+	display: inline;
+	float: left;
+}
+
+.fieldWhole {
+	opacity: 0;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 10px;
+	width: 50%;
+}
+
+/* End clientForm */
+
+/* serviceSelect */
+
+.serviceWrapper {
+	margin-top: 4%;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.serviceButton {
+	opacity: 0;
+	background-color: transparent;
+	width: 300px;
+	height: 100px;
+	border-width: 5px;
+	border-color: #FFFFFF;
+	font-size: 20px;
+}
+
+.serviceButton-left {
+	margin-right: 40px;
+}
+
+.serviceButton-right {
+	margin-left: 40px;
+}
+
+/* End serviceSelect */
+
+/* stepScreen */
+
+.stepTitle {
+	margin-top: 15%;
+	opacity: 0;
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.stepLabel {
+	opacity: 0;
+	text-align: center;
+	font-size: 15px;
+	font-weight:bold;
+}
+
+.stepButton {
+	opacity: 0;
+	background-color: #005588;
+	border-radius: 25px;
+	width: 50px;
+	height: 50px;
+	z-index: 1;
+}
+
+.stepButtonActive {
+	background-color: #0088CC;
+}
+
+.stepLabelActive {
+	color: #0088CC;
+}
+
+.stepWrapper {
+	margin-top: 100px;
+}
+
+.stepCol {
+	border-spacing: 50px;
+	margin: 0 30px 0 30px;
+	display: inline-block;
+}
+
+.stepLine {
+	opacity: 0;
+	width: 400px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	left: 0;
+	right: 0;
+	z-index: -100;
+}
+
+.homeButton {
+	opacity: 0;
+	position: absolute;
+	left: 25px;
+	top: 25px;
+	width: 50px;
+	height: 50px;
+}
+
+/* End stepScreen */
+
+/* productView */
+
+.fadeIn {
+	opacity: 0;
+} 
+
+.showOptions {
+	position: absolute;
+	left: 25px;
+	bottom: 30px;
+}
+
+.productWrapper {
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+}
+
+.productInfo {
+	display: inline-block;
+	color: #CCCCCC;
+}
+
+.productName {
+	margin-right: 100px;
+	text-align: right;
+}
+
+.productPrice {
+	margin-right: 50px;
+}
+
+.productCheck {
+	vertical-align: middle;
+}
+
+.imageStage{
+	position: relative;
+}
+
+.productImage {
+}
+
+.optionsStage {
+	background-color: #CCCCCC;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -200px;
+	height: 200px;
+}
+
+.optionsStageDiv {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	z-index: -1;
+}
+
+.scrolling{
+
+}
+
+/* End productView */
+
+/* review */
+
+.reviewPanel {
+	position: absolute;
+	left: 50px;
+	top: 100px;
+	background-color: #D4E2E8;
+	border-radius: 20px;
+	width: 400px;
+	height: 600px;
+}
+
+.reviewHeader {
+	font-weight: bold;
+	color: #777777;
+}
+
+.reviewSeparator {
+	border-color: #146C96;
+	width: 330px;
+}
+
+.reviewItemList {
+	margin: 0 35px 0;
+	height: 40px;
+}
+
+.reviewItem {
+	color: #AAAAAA;
+	display: inline-block;
+	text-align: left;
+	float: left;
+}
+
+.reviewItemPrice {
+	color: #AAAAAA;
+	display: inline-block;
+	text-align: right;
+	float: right;
+}
+
+.reviewTotal {
+	color: #888888;
+	display: inline-block;
+	text-align: left;
+	float: left;
+}
+
+.reviewApproveButton {
+	background-color: #44B75B;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 20px;
+	position: absolute;
+	width: 200px;
+	height: 80px;
+	bottom: 30px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-radius: 15px;
+}
+
+.reviewImageStage {
+	position: absolute;
+	left: 600px;
+	top: 100px;
+	width: 400px;
+	height: 400px;
+}
+
+.reviewImage {
+	max-width: 100%;
+}
+
+/* End review */
+
+/* finished */
+
+.thankYou {
+	margin-top: 15%;
+}
+
+/* End finished */
