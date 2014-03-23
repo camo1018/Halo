@@ -55,5 +55,6 @@ app.get('/finished', function(req, res) {
 
 // End Routes
 
+console.log("Server started at port 8000.");
 
-app.listen(8888);
+app.listen(8000);
