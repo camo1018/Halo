@@ -24,6 +24,11 @@ $(function() {
 	});
 
 	$('#continue').bind('click', function() {
+		if ($('#traditional').prop('disabled'))
+			$.get('/actions/selectTraditional');
+		else
+			$.get('/actions/selectCremation');
+
 		$('#welcome, #traditional, #cremation, #continue').animate({
 			opacity: 0
 		}, 1000, function() {
