@@ -1,7 +1,7 @@
 // Wait for DOM ready
 $(function() {
 	var serviceType, currentServiceStep, serviceSteps;
-
+	var selectedStep;
 	$.get('/actions/getStepScreenInformation', function(data) {
 		serviceType = data.serviceType;
 		currentServiceStep = data.currentServiceStep;
@@ -39,6 +39,7 @@ $(function() {
 		$('#continue').prop('disabled', true);
 
 		$(".stepButton").bind('click', function() {
+			selectedStep = $(this);
 			$(this).addClass('stepButtonActive')
 			var label = $(this).parent().find('.stepLabel');
 			label.addClass('stepLabelActive');
@@ -52,11 +53,14 @@ $(function() {
 		})
 
 		$('#continue').bind('click', function() {
-			$('[class*=step], #continue, .homeButton').animate({
-				opacity: 0
-			}, 1000, function() {
-				document.location = "productView";
-			});
+			var params = { stepOrder: selectedStep.html() };
+			$.get('/actions/selectStep', params, function() {
+                $('[class*=step], #continue, .homeButton').animate({
+                    opacity: 0
+                }, 1000, function () {
+                    document.location = "productView";
+                });
+            });
 		});
 
 		$('.homeButton').bind('click', function() {

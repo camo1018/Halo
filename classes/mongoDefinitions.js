@@ -14,3 +14,11 @@ var serviceStepSchema = mongoose.Schema({
 	serviceName: String
 });
 exports.ServiceStep = mongoose.model('ServiceStep', serviceStepSchema);
+
+var productSchema = mongoose.Schema({
+	type: String,
+	name: String,
+	imageUrl: String,
+	price: Number
+});
+exports.Product = mongoose.model('Product', productSchema);
