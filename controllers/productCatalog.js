@@ -10,9 +10,11 @@ module.exports = function(app, mongoose, MongoDefinitions, async) {
         var stepName = '';
         var products = [];
 
+        console.log('Requesting products with service step order of ' + serviceStep);
+
 		async.series([
             function(callback) {
-                MongoDefinitions.Service.findOne({ stepOrder : serviceStep }, function(err, result) {
+                MongoDefinitions.ServiceStep.findOne({ stepOrder : parseInt(serviceStep) }, function(err, result) {
                     stepName = result.stepName;
                     callback(null);
                 });
@@ -22,7 +24,11 @@ module.exports = function(app, mongoose, MongoDefinitions, async) {
                     for (var i = 0; i < results.length; i++) {
                         products.push(results[i]);
                     }
-                    res.json(products);
+
+                    if (products.length > 0)
+                        res.json(products);
+                    else
+                        res.send(null);
                     callback(null);
                 })
 			}

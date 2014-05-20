@@ -59,7 +59,6 @@ module.exports = function(app, mongoose, MongoDefinitions, async) {
 		MongoDefinitions.ServiceStep.findOne({ stepOrder: stepOrder }, function(err, result) {
 			req.session.serviceStep = result.stepOrder;
 			res.send('good');
-			callback(null);
 		});
 	});
 }
