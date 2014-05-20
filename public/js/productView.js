@@ -9,7 +9,6 @@ $(function() {
 
         function productViewModel() {
             var self = this;
-
             self.products = products;
         }
 
