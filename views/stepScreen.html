@@ -18,38 +18,29 @@
     <![endif]-->
   </head>
   <body>
-    <h1 class="stepTitle" id="stepTitle">Step Title</h1>
+    <h1 class="stepTitle" id="stepTitle"></h1>
 
     <input class = "homeButton" type="image" src="img/home.png">
 
-    <div class="stepWrapper">
+    <h2 class="stepDescription" id="stepDescription"></h2>
+
+    <div class="stepWrapper" data-bind="foreach: steps">
+      <!-- ko if: $index() == 0 -->
       <hr class="stepLine">
+      <!-- /ko -->
       <div class="stepCol">
-        <button class="stepButton" id="casketsButton" highlight>1</button>
-        <h2 class="stepLabel" id="casketsLabel">Caskets</h2>
-      </div>
-      <div class="stepCol">
-        <button class="stepButton" id="vaultsButton">2</button>
-        <h2 class="stepLabel" id="vaultsLabel">Vaults</h2>
-      </div>
-      <div class="stepCol">
-        <button class="stepButton" id="flowersButton">3</button>
-        <h2 class="stepLabel" id="flowersLabel">Flowers</h2>
-      </div>
-      <div class="stepCol">
-        <button class="stepButton" id="keepsakesButton">4</button>
-        <h2 class="stepLabel" id="keepsakesLabel">Keepsakes</h2>
+        <button class="stepButton" highlight data-bind="text: stepOrder"></button>
+        <h2 class="stepLabel" data-bind="text: stepName"></h2>
       </div>
     </div>
 
     <button class="btn continueButton" id="continue">Continue</button>
 
-
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/knockout-3.1.0.js"></script>
+    <script src="js/linq.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/stepScreen.js"></script>
   </body>
