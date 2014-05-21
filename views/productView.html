@@ -22,7 +22,7 @@
     <input type="image" src="img/showOptions.png" class="fadeIn showOptions scrolling" id="showOptions">
 
     <div class="fadeIn imageStage">
-      <img class="productImage" src="img/sampleCasket.png">
+      <img class="productImage" id="productImage" src="img/sampleCasket.png">
     </div>
 
     <div class="fadeIn productWrapper scrolling">
@@ -33,8 +33,17 @@
     </div>
 
     <div class="optionsStageDiv fadeIn">
-      <div class="optionsStage" data-bind="foreach: products">
-        <h1>TODO: REMOVE ME!</h1>
+      <div class="optionsStage">
+        <table class="optionsProductTable">
+            <tr data-bind="foreach: products">
+                <td>
+                    <div class="optionsProductDiv">
+                        <input type="image" class="optionsProductImage" data-bind="attr: { src: imageUrl, productType: type, productName: name }">
+                        <p class="optionsProductLabel" data-bind="text: name"></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
       </div>
     </div>
 

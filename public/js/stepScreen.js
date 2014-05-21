@@ -26,6 +26,21 @@ $(function() {
 
 		ko.applyBindings(new stepViewModel());
 
+        $.get('/actions/getFinishedSteps', function(finishedSteps) {
+            $('.stepButton').each(function() {
+                var isStepFinished = false;
+                for (var i = 0; i < finishedSteps.length; i++) {
+                    if (finishedSteps[i].stepOrder == $(this).html()) {
+                        isStepFinished = true;
+                    }
+                }
+                if (isStepFinished) {
+                    $(this).html('Done');;
+                    $(this).prop('disabled', true);
+                }
+            });
+        });
+
 		$("[class*=step], .homeButton").animate({
 			opacity: 1
 		}, 1000, function() {

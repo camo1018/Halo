@@ -17,6 +17,27 @@ $(function() {
         var optionsStageVisible = false;
         var optionsStageAnimating = false;
 
+        var selectedProduct;
+
+        if (products.length > 0) {
+            $('#productName').html(products[0].name);
+            $('#productPrice').html(products[0].price);
+            $('#productImage').attr('src', products[0].imageUrl);
+            selectedProduct = products[0];
+        }
+
+        $('.optionsProductImage').on('click', function() {
+            var productType = $(this).attr('productType');
+            var productName = $(this).attr('productName');
+            var params = { productType: productType, productName: productName };
+            $.get('/actions/getProduct', params, function(product) {
+                $('#productName').html(product.name);
+                $('#productPrice').html(product.price);
+                $('#productImage').attr('src', product.imageUrl);
+                selectedProduct = product;
+            });
+        });
+
         $('#showOptions').bind('click', function () {
             if (optionsStageAnimating)
                 return;
@@ -42,10 +63,13 @@ $(function() {
         });
 
         $('#productCheck').bind('click', function () {
-            $('.fadeIn').animate({
-                opacity: 0
-            }, 1000, function () {
-                document.location = "review";
+            var params = { product: selectedProduct };
+            $.get('/actions/selectProduct', params, function() {
+                $('.fadeIn').animate({
+                    opacity: 0
+                }, 1000, function () {
+                    document.location = "stepScreen";
+                });
             });
         });
     });

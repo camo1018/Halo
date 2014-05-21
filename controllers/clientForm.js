@@ -13,6 +13,8 @@ module.exports = function(app, mongoose, MongoDefinitions, async) {
 		var user ={ firstName: firstName, lastName: lastName, email: email, departedName: departedName };
 
 		req.session.currentUser = user;
+        req.session.selectedProducts = [];
+        req.session.finishedSteps = [];
 
 		// var user = new User({ firstName: firstName, lastName: lastName, email: email, departedName: departedName });
 		// user.save(function (err) {

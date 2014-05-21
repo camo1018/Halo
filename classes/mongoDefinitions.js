@@ -11,7 +11,8 @@ var serviceStepSchema = mongoose.Schema({
 	// For what to display on the big header label.
 	stepHeaderName: String,
 	stepOrder: Number,
-	serviceName: String
+	serviceName: String,
+    productType: String
 });
 exports.ServiceStep = mongoose.model('ServiceStep', serviceStepSchema);
 

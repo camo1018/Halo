@@ -20,28 +20,32 @@ var casketStepTraditional = new MongoDefinitions.ServiceStep({
 	stepName: 'Caskets',
 	stepHeaderName: 'casket',
 	stepOrder: 1,
-	serviceName: 'traditional'
+	serviceName: 'traditional',
+    productType: 'casket'
 });
 
 var vaultStep = new MongoDefinitions.ServiceStep({
 	stepName: 'Vaults',
 	stepHeaderName: 'vault',
 	stepOrder: 2,
-	serviceName: 'traditional'
+	serviceName: 'traditional',
+    productType: 'vault'
 });
 
 var flowerStepTraditional = new MongoDefinitions.ServiceStep({
 	stepName: 'Flowers',
 	stepHeaderName: 'floral tribute',
 	stepOrder: 3,
-	serviceName: 'traditional'
+	serviceName: 'traditional',
+    productType: 'flower'
 });
 
 var keepsakeStepTraditional = new MongoDefinitions.ServiceStep({
 	stepName: 'Keepsakes',
 	stepHeaderName: 'keepsake',
 	stepOrder: 4,
-	serviceName: 'traditional'
+	serviceName: 'traditional',
+    productType: 'keepsake'
 });
 
 var cremationService = new MongoDefinitions.Service({
@@ -53,28 +57,32 @@ var casketStepCremation = new MongoDefinitions.ServiceStep({
 	stepName: 'Caskets',
 	stepHeaderName: 'casket',
 	stepOrder: 1,
-	serviceName: 'cremation'
+	serviceName: 'cremation',
+    productType: 'casket'
 });
 
 var urnStep = new MongoDefinitions.ServiceStep({
 	stepName: 'Urns',
 	stepHeaderName: 'urn',
 	stepOrder: 2,
-	serviceName: 'cremation'
+	serviceName: 'cremation',
+    productType: 'urn'
 });
 
 var flowerStepCremation = new MongoDefinitions.ServiceStep({
 	stepName: 'Flowers',
 	stepHeaderName: 'floral tribute',
 	stepOrder: 3,
-	serviceName: 'cremation'
+	serviceName: 'cremation',
+    productType: 'flower'
 });
 
 var keepsakeStepCremation = new MongoDefinitions.ServiceStep({
 	stepName: 'Keepsakes',
 	stepHeaderName: 'keepsake',
 	stepOrder: 4,
-	serviceName: 'cremation'
+	serviceName: 'cremation',
+    productType: 'keepsake'
 });
 
 traditionalService.save();
@@ -87,6 +95,26 @@ casketStepCremation.save();
 urnStep.save();
 flowerStepCremation.save();
 keepsakeStepCremation.save();
+
+// Products
+MongoDefinitions.Product.collection.drop();
+
+// Casket
+var brownCasket = new MongoDefinitions.Product( {
+    type: 'casket',
+    name: 'Brown Casket',
+    imageUrl: 'http://www.damianofuneralhome.com/Malorie_6036340_PC_O.jpg',
+    price: 3000
+})
+brownCasket.save();
+
+var grayCasket = new MongoDefinitions.Product( {
+    type: 'casket',
+    name: 'Gray Casket',
+    imageUrl: 'http://3.bp.blogspot.com/_kx-6LfX6YXk/TVSuLSqfWhI/AAAAAAAAAD0/mII7Iuebqcw/s1600/casket.jpg',
+    price: 2500
+})
+grayCasket.save();
 
 // End Routes
 

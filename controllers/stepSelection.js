@@ -61,4 +61,24 @@ module.exports = function(app, mongoose, MongoDefinitions, async) {
 			res.send('good');
 		});
 	});
+
+    app.get('/actions/getFinishedSteps', function(req, res) {
+        var finishedSteps = req.session.finishedSteps;
+        var serviceName = req.session.serviceType;
+
+        console.log('Getting all the finished steps.');
+
+        async.series([
+            function(callback) {
+                MongoDefinitions.ServiceStep.find({ stepOrder: { $in : finishedSteps }, serviceName: serviceName}, function(err, results) {
+                    res.json(results);
+                    callback(null);
+                });
+            },
+            function(callback) {
+                console.log('Retrieved finished steps');
+                callback(null);
+            }
+        ])
+    });
 }
