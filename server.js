@@ -45,10 +45,6 @@ app.get('/welcome', function(req, res) {
 	res.render('welcome.html');
 });
 
-app.get('/review', function(req, res) {
-	res.render('review.html');
-});
-
 app.get('/finished', function(req, res) {
 	res.render('finished.html');
 });
@@ -65,6 +61,7 @@ app.get('/finished', function(req, res) {
 require('./controllers/clientForm.js')(app, mongoose, MongoDefinitions, async);
 require('./controllers/stepSelection.js')(app, mongoose, MongoDefinitions, async);
 require('./controllers/productCatalog.js')(app, mongoose, MongoDefinitions, async);
+require('./controllers/review.js')(app, mongoose, MongoDefinitions, async);
 
 console.log("Server started at port 8000.");
 

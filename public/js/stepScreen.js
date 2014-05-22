@@ -51,6 +51,10 @@ $(function() {
 			opacity: 0.3
 		}, 1000);
 
+        $('#checkout').animate({
+            opacity: 1
+        }, 1000);
+
 		$('#continue').prop('disabled', true);
 
 		$(".stepButton").bind('click', function() {
@@ -77,6 +81,14 @@ $(function() {
                 });
             });
 		});
+
+        $('#checkout').bind('click', function() {
+            $('[class*=step], #continue, .homeButton').animate({
+                opacity: 0
+            }, 1000, function() {
+                document.location = 'review';
+            });
+        });
 
 		$('.homeButton').bind('click', function() {
 			$('[class*=step], #continue, .homeButton').animate({

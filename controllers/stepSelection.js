@@ -35,7 +35,7 @@ module.exports = function(app, mongoose, MongoDefinitions, async) {
 
 		async.series([
 			function(callback) {
-				MongoDefinitions.ServiceStep.find({ serviceName: serviceType }, function(err, results) {
+				MongoDefinitions.ServiceStep.find({ serviceName: serviceType }).sort({ stepOrder: 1 }).exec(function(err, results) {
 					for (var i = 0; i < results.length; i++) {
 						serviceSteps.push(results[i]);
 					}

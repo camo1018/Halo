@@ -50,13 +50,13 @@ body {
 }
 
 .continueButton {
-	background-color: #00AA00;
-	opacity: 0;
-	margin-top: 100px;
-	margin-left: 25%;
-	margin-right: 25%;
-	width: 100px;
-	height: 50px;
+    background-color: #00AA00;
+    opacity: 0;
+    margin-top: 100px;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 100px;
+    height: 50px;
 }
 
 /* clientForm */
@@ -198,6 +198,16 @@ body {
 	top: 25px;
 	width: 50px;
 	height: 50px;
+}
+
+.checkoutButton {
+    background-color: #33AACC;
+    opacity: 0;
+    margin-top: 100px;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 100px;
+    height: 50px;
 }
 
 /* End stepScreen */

@@ -6,11 +6,28 @@ $(function() {
 		// Animation complete
 	});
 
-	$('#approveButton').bind('click', function() {
-		$('.fadeIn').animate({
-			opacity: 0
-		}, 1000, function() {
-			document.location = "finished";
-		});
-	});
+    $.get('/actions/getSelectedProducts', function(products) {
+        function reviewViewModel() {
+            var self = this;
+
+            self.products = ko.observableArray(products);
+        }
+
+        ko.applyBindings(new reviewViewModel());
+
+        var totalPrice = '$';
+        for (var i = 0; i < products.length; i++) {
+            totalPrice += products[i].price;
+        }
+
+        $('#approveButton').bind('click', function() {
+            $('.fadeIn').animate({
+                opacity: 0
+            }, 1000, function() {
+                document.location = "finished";
+            });
+        });
+
+        $('#totalPriceLabel').html(totalPrice);
+    });
 });
