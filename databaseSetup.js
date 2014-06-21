@@ -116,6 +116,15 @@ var grayCasket = new MongoDefinitions.Product( {
 })
 grayCasket.save();
 
+// Vault
+var someVault = new MongoDefinitions.Product( {
+    type: 'vault',
+    name: 'Purple Vault',
+    imageUrl: 'http://www.image.com',
+    price: 2700
+})
+someVault.save();
+
 // End Routes
 
 // mongoClient.connect(mongoHostname, function(err, db) {
