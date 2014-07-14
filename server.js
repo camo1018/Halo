@@ -4,12 +4,8 @@
 
 var express = require('express');
 var ejs = require('ejs');
-var async = require('async');
 
-var mongoose = require('mongoose');
-var mongoHostname = 'mongodb://127.0.0.1:27017/halo';
-mongoose.connect(mongoHostname);
-var MongoDefinitions = require('./classes/mongoDefinitions');
+var modules = require('./modules');
 
 var app = express();
 
@@ -38,15 +34,15 @@ app.get('/', function(req, res) {
 });
 
 app.get('/intro', function(req, res) {
-	res.render('intro.html');
+	res.render('productCatalog/intro.html');
 });
 
 app.get('/welcome', function(req, res) {
-	res.render('welcome.html');
+	res.render('productCatalog/welcome.html');
 });
 
 app.get('/finished', function(req, res) {
-	res.render('finished.html');
+	res.render('productCatalog/finished.html');
 });
 
 // mongoClient.connect(mongoHostname, function(err, db) {
@@ -58,10 +54,10 @@ app.get('/finished', function(req, res) {
 // });
 
 // Controller Initialization
-require('./controllers/clientForm.js')(app, mongoose, MongoDefinitions, async);
-require('./controllers/stepSelection.js')(app, mongoose, MongoDefinitions, async);
-require('./controllers/productCatalog.js')(app, mongoose, MongoDefinitions, async);
-require('./controllers/review.js')(app, mongoose, MongoDefinitions, async);
+require('./controllers/productCatalog/clientForm.js')(app, modules);
+require('./controllers/productCatalog/stepSelection.js')(app, modules);
+require('./controllers/productCatalog/productCatalog.js')(app, modules);
+require('./controllers/productCatalog/review.js')(app, modules);
 
 console.log("Server started at port 8000.");
 
