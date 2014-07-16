@@ -10,13 +10,13 @@ module.exports = function(app, modules) {
 	});
 
 	app.get('/actions' + section + 'selectTraditional', function(req, res) {
-		console.log('Selecting traditional service for user ' + req.session.currentUser.firstName + ' ' + req.session.currentUser.lastName);
+		console.log('Selecting traditional service for user');
 		req.session.serviceType = 'traditional';
 		res.send('good');
 	});
 
 	app.get('/actions' + section + 'selectCremation', function(req, res) {
-		console.log('Selecting cremation service for user ' + req.session.currentUser.firstName + ' ' + req.session.currentUser.lastName);
+		console.log('Selecting cremation service for user ');
 		req.session.serviceType = 'cremation';
 		res.send('good');
 	});
@@ -70,7 +70,7 @@ module.exports = function(app, modules) {
 
         console.log('Getting all the finished steps.');
 
-        async.series([
+        modules.Async.series([
             function(callback) {
                 modules.MongoDefinitions.ProductCatalog.ServiceStep.find({ stepOrder: { $in : finishedSteps }, serviceName: serviceName}, function(err, results) {
                     res.json(results);
