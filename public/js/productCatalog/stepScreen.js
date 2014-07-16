@@ -2,7 +2,7 @@
 $(function() {
 	var serviceType, currentServiceStep, serviceSteps;
 	var selectedStep;
-	$.get('/actions/getStepScreenInformation', function(data) {
+	$.get('/actions/productCatalog/getStepScreenInformation', function(data) {
 		serviceType = data.serviceType;
 		currentServiceStep = data.currentServiceStep;
 		serviceSteps = data.serviceSteps;
@@ -26,7 +26,7 @@ $(function() {
 
 		ko.applyBindings(new stepViewModel());
 
-        $.get('/actions/getFinishedSteps', function(finishedSteps) {
+        $.get('/actions/productCatalog/getFinishedSteps', function(finishedSteps) {
             $('.stepButton').each(function() {
                 var isStepFinished = false;
                 for (var i = 0; i < finishedSteps.length; i++) {

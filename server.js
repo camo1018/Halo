@@ -42,7 +42,6 @@ app.get('/', function(req, res) {
 
 // Controller Initialization
 require('./controllers/productCatalog/productCatalog.js')(app, modules);
-require('./controllers/productCatalog/clientForm.js')(app, modules);
 require('./controllers/productCatalog/stepSelection.js')(app, modules);
 require('./controllers/productCatalog/productView.js')(app, modules);
 require('./controllers/productCatalog/review.js')(app, modules);

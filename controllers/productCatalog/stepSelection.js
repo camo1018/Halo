@@ -37,7 +37,7 @@ module.exports = function(app, modules) {
 
 		modules.Async.series([
 			function(callback) {
-				modules.MongoDefinitions.ServiceStep.find({ serviceName: serviceType }).sort({ stepOrder: 1 }).exec(function(err, results) {
+				modules.MongoDefinitions.ProductCatalog.ServiceStep.find({ serviceName: serviceType }).sort({ stepOrder: 1 }).exec(function(err, results) {
 					for (var i = 0; i < results.length; i++) {
 						serviceSteps.push(results[i]);
 					}
@@ -58,7 +58,7 @@ module.exports = function(app, modules) {
 		
 		console.log('Selecting a service order: ' + stepOrder);
 		
-		modules.MongoDefinitions.ServiceStep.findOne({ stepOrder: stepOrder }, function(err, result) {
+		modules.MongoDefinitions.ProductCatalog.ServiceStep.findOne({ stepOrder: stepOrder }, function(err, result) {
 			req.session.serviceStep = result.stepOrder;
 			res.send('good');
 		});
@@ -72,7 +72,7 @@ module.exports = function(app, modules) {
 
         async.series([
             function(callback) {
-                modules.MongoDefinitions.ServiceStep.find({ stepOrder: { $in : finishedSteps }, serviceName: serviceName}, function(err, results) {
+                modules.MongoDefinitions.ProductCatalog.ServiceStep.find({ stepOrder: { $in : finishedSteps }, serviceName: serviceName}, function(err, results) {
                     res.json(results);
                     callback(null);
                 });

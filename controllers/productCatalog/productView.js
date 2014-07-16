@@ -17,13 +17,13 @@ module.exports = function(app, modules) {
 
 		modules.Async.series([
             function(callback) {
-                modules.MongoDefinitions.ServiceStep.findOne({ serviceName: serviceType, stepOrder : parseInt(serviceStep) }, function(err, result) {
+                modules.MongoDefinitions.ProductCatalog.ServiceStep.findOne({ serviceName: serviceType, stepOrder : parseInt(serviceStep) }, function(err, result) {
                     productType = result.productType;
                     callback(null);
                 });
             },
 			function(callback) {
-				modules.MongoDefinitions.Product.find({ type: productType }, function(err, results) {
+				modules.MongoDefinitions.ProductCatalog.Product.find({ type: productType }, function(err, results) {
                     for (var i = 0; i < results.length; i++) {
                         products.push(results[i]);
                     }
@@ -41,7 +41,7 @@ module.exports = function(app, modules) {
     app.get('/actions' + section + 'getProduct', function(req, res) {
         var productType = req.query.productType;
         var productName = req.query.productName;
-        modules.MongoDefinitions.Product.findOne({ type: productType, name: productName }, function(err, result) {
+        modules.MongoDefinitions.ProductCatalog.Product.findOne({ type: productType, name: productName }, function(err, result) {
             res.send(result);
         })
     });

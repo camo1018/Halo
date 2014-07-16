@@ -25,9 +25,9 @@ $(function() {
 
 	$('#continue').bind('click', function() {
 		if ($('#traditional').prop('disabled'))
-			$.get('/actions/selectTraditional');
+			$.get('/actions/productCatalog/selectTraditional');
 		else
-			$.get('/actions/selectCremation');
+			$.get('/actions/productCatalog/selectCremation');
 
 		$('#welcome, #traditional, #cremation, #continue').animate({
 			opacity: 0

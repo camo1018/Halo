@@ -16,7 +16,7 @@ $(function() {
 		$('#fadeTag, #fadeCredo, #continueLabel').animate({
 			opacity: 0
 		}, 1000, function() {
-			document.location = "clientForm";
+			document.location = "serviceSelect";
 		});
 	};
 

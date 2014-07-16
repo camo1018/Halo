@@ -6,7 +6,7 @@ $(function() {
 		// Animation complete
 	});
 
-    $.get('/actions/getSelectedProducts', function(products) {
+    $.get('/actions/productCatalog/getSelectedProducts', function(products) {
         function reviewViewModel() {
             var self = this;
 

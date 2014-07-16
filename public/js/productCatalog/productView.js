@@ -1,6 +1,6 @@
 // Wait for DOM ready
 $(function() {
-    $.get('/actions/getProductsForStep', function(products) {
+    $.get('/actions/productCatalog/getProductsForStep', function(products) {
         $(".fadeIn").animate({
             opacity: 1
         }, 1000, function () {
