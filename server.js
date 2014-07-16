@@ -32,18 +32,6 @@ app.get('/', function(req, res) {
 	res.render('index.html');
 });
 
-app.get('/intro', function(req, res) {
-	res.render('productCatalog/intro.html');
-});
-
-app.get('/welcome', function(req, res) {
-	res.render('productCatalog/welcome.html');
-});
-
-app.get('/finished', function(req, res) {
-	res.render('productCatalog/finished.html');
-});
-
 // mongoClient.connect(mongoHostname, function(err, db) {
 // 	if (err) throw err;
 
@@ -53,10 +41,13 @@ app.get('/finished', function(req, res) {
 // });
 
 // Controller Initialization
+require('./controllers/productCatalog/productCatalog.js')(app, modules);
 require('./controllers/productCatalog/clientForm.js')(app, modules);
 require('./controllers/productCatalog/stepSelection.js')(app, modules);
-require('./controllers/productCatalog/productCatalog.js')(app, modules);
+require('./controllers/productCatalog/productView.js')(app, modules);
 require('./controllers/productCatalog/review.js')(app, modules);
+
+require('./controllers/clientAdministration/login.js')(app, modules);
 
 console.log("Server started at port 8000.");
 
