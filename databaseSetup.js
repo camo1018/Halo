@@ -7,16 +7,16 @@ mongoose.connect(mongoHostname);
 
 var MongoDefinitions = require('./models/mongoDefinitions');
 
-MongoDefinitions.Service.collection.drop();
-MongoDefinitions.ServiceStep.collection.drop();
+MongoDefinitions.ProductCatalog.Service.collection.drop();
+MongoDefinitions.ProductCatalog.ServiceStep.collection.drop();
 
 // Default Services and their steps
-var traditionalService = new MongoDefinitions.Service({
+var traditionalService = new MongoDefinitions.ProductCatalog.Service({
 	serviceName: 'traditional',
 	headerLabel: 'Traditional Service'
 });
 
-var casketStepTraditional = new MongoDefinitions.ServiceStep({
+var casketStepTraditional = new MongoDefinitions.ProductCatalog.ServiceStep({
 	stepName: 'Caskets',
 	stepHeaderName: 'casket',
 	stepOrder: 1,
@@ -24,7 +24,7 @@ var casketStepTraditional = new MongoDefinitions.ServiceStep({
     productType: 'casket'
 });
 
-var vaultStep = new MongoDefinitions.ServiceStep({
+var vaultStep = new MongoDefinitions.ProductCatalog.ServiceStep({
 	stepName: 'Vaults',
 	stepHeaderName: 'vault',
 	stepOrder: 2,
@@ -32,7 +32,7 @@ var vaultStep = new MongoDefinitions.ServiceStep({
     productType: 'vault'
 });
 
-var flowerStepTraditional = new MongoDefinitions.ServiceStep({
+var flowerStepTraditional = new MongoDefinitions.ProductCatalog.ServiceStep({
 	stepName: 'Flowers',
 	stepHeaderName: 'floral tribute',
 	stepOrder: 3,
@@ -40,7 +40,7 @@ var flowerStepTraditional = new MongoDefinitions.ServiceStep({
     productType: 'flower'
 });
 
-var keepsakeStepTraditional = new MongoDefinitions.ServiceStep({
+var keepsakeStepTraditional = new MongoDefinitions.ProductCatalog.ServiceStep({
 	stepName: 'Keepsakes',
 	stepHeaderName: 'keepsake',
 	stepOrder: 4,
@@ -48,12 +48,12 @@ var keepsakeStepTraditional = new MongoDefinitions.ServiceStep({
     productType: 'keepsake'
 });
 
-var cremationService = new MongoDefinitions.Service({
+var cremationService = new MongoDefinitions.ProductCatalog.Service({
 	serviceName: 'cremation',
 	headerLabel: 'Cremation Service'
 });
 
-var casketStepCremation = new MongoDefinitions.ServiceStep({
+var casketStepCremation = new MongoDefinitions.ProductCatalog.ServiceStep({
 	stepName: 'Caskets',
 	stepHeaderName: 'casket',
 	stepOrder: 1,
@@ -61,7 +61,7 @@ var casketStepCremation = new MongoDefinitions.ServiceStep({
     productType: 'casket'
 });
 
-var urnStep = new MongoDefinitions.ServiceStep({
+var urnStep = new MongoDefinitions.ProductCatalog.ServiceStep({
 	stepName: 'Urns',
 	stepHeaderName: 'urn',
 	stepOrder: 2,
@@ -69,7 +69,7 @@ var urnStep = new MongoDefinitions.ServiceStep({
     productType: 'urn'
 });
 
-var flowerStepCremation = new MongoDefinitions.ServiceStep({
+var flowerStepCremation = new MongoDefinitions.ProductCatalog.ServiceStep({
 	stepName: 'Flowers',
 	stepHeaderName: 'floral tribute',
 	stepOrder: 3,
@@ -77,7 +77,7 @@ var flowerStepCremation = new MongoDefinitions.ServiceStep({
     productType: 'flower'
 });
 
-var keepsakeStepCremation = new MongoDefinitions.ServiceStep({
+var keepsakeStepCremation = new MongoDefinitions.ProductCatalog.ServiceStep({
 	stepName: 'Keepsakes',
 	stepHeaderName: 'keepsake',
 	stepOrder: 4,
@@ -97,10 +97,10 @@ flowerStepCremation.save();
 keepsakeStepCremation.save();
 
 // Products
-MongoDefinitions.Product.collection.drop();
+MongoDefinitions.ProductCatalog.Product.collection.drop();
 
 // Casket
-var brownCasket = new MongoDefinitions.Product( {
+var brownCasket = new MongoDefinitions.ProductCatalog.Product( {
     type: 'casket',
     name: 'Brown Casket',
     imageUrl: 'http://www.damianofuneralhome.com/Malorie_6036340_PC_O.jpg',
@@ -108,7 +108,7 @@ var brownCasket = new MongoDefinitions.Product( {
 })
 brownCasket.save();
 
-var grayCasket = new MongoDefinitions.Product( {
+var grayCasket = new MongoDefinitions.ProductCatalog.Product( {
     type: 'casket',
     name: 'Gray Casket',
     imageUrl: 'http://3.bp.blogspot.com/_kx-6LfX6YXk/TVSuLSqfWhI/AAAAAAAAAD0/mII7Iuebqcw/s1600/casket.jpg',
@@ -117,7 +117,7 @@ var grayCasket = new MongoDefinitions.Product( {
 grayCasket.save();
 
 // Vault
-var someVault = new MongoDefinitions.Product( {
+var someVault = new MongoDefinitions.ProductCatalog.Product( {
     type: 'vault',
     name: 'Purple Vault',
     imageUrl: 'http://www.image.com',
