@@ -20,15 +20,23 @@
 </head>
 <body>
 
-<div class="fieldHalfWrapper">
-    <form name="login-form">
-        <p>Username</p>
-        <input id="username-field" name="username" type="text" placeholder="Enter your username">
-        <p>Password</p>
-        <input id="password-field" name="password" type="password" placeholder="Enter your password">
-        <br>
-        <input id="login-submit-button" name="submit" type="submit" value="Log in">
-    </form>
+<div class="login-div center">
+    <div id="login-error" class="alert alert-danger not-visible" role="alert">
+        <strong>Login failed</strong>
+        <p>Unrecognized username or password</p>
+    </div>
+    <div class="login-wrapper">
+        <div class="login-inner">
+            <form name="login-form">
+                <span>Username</span>
+                <input id="username-field" name="username" type="text" placeholder="Enter your username" class="form-control form-inner">
+                <span>Password</span>
+                <input id="password-field" name="password" type="password" placeholder="Enter your password" class="form-control form-inner">
+                <br>
+                <input id="login-submit-button" name="submit" type="submit" value="Log in" class="btn btn-success">
+            </form>
+        </div>
+    </div>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

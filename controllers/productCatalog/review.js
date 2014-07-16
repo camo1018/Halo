@@ -8,5 +8,4 @@ module.exports = function(app, modules) {
     app.get('/actions' + section + 'getSelectedProducts', function(req, res) {
         res.json(req.session.selectedProducts);
     });
-
 }
