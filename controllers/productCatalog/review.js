@@ -1,10 +1,11 @@
 module.exports = function(app, modules) {
+    var section = '/productCatalog/';
 
-    app.get('/review', function(req, res) {
+    app.get(section + '/review', function(req, res) {
         res.render('productCatalog/review.html');
     });
 
-    app.get('/actions/getSelectedProducts', function(req, res) {
+    app.get('/actions' + section + 'getSelectedProducts', function(req, res) {
         res.json(req.session.selectedProducts);
     });
 

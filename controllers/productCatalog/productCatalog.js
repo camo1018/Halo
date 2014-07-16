@@ -1,9 +1,11 @@
 module.exports = function(app, modules) {
-	app.get('/productView', function(req, res) {
+    var section = '/productCatalog/';
+
+	app.get(section + 'productView', function(req, res) {
 		res.render('productCatalog/productView.html');
 	});
 
-	app.get('/actions/getProductsForStep', function(req, res) {
+	app.get('/actions' + section + 'getProductsForStep', function(req, res) {
 		var serviceStep = req.session.serviceStep;
         var serviceType = req.session.serviceType;
 
@@ -36,7 +38,7 @@ module.exports = function(app, modules) {
 		]);
 	});
 
-    app.get('/actions/getProduct', function(req, res) {
+    app.get('/actions' + section + 'getProduct', function(req, res) {
         var productType = req.query.productType;
         var productName = req.query.productName;
         modules.MongoDefinitions.Product.findOne({ type: productType, name: productName }, function(err, result) {
@@ -44,7 +46,7 @@ module.exports = function(app, modules) {
         })
     });
 
-    app.get('/actions/selectProduct', function(req, res) {
+    app.get('/actions' + section + 'selectProduct', function(req, res) {
         var product = req.query.product;
         var currentStepOrder = req.session.serviceStep;
         req.session.selectedProducts.push(product);

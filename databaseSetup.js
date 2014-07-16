@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var mongoHostname = 'mongodb://127.0.0.1:27017/halo';
 mongoose.connect(mongoHostname);
 
-var MongoDefinitions = require('./classes/mongoDefinitions');
+var MongoDefinitions = require('./models/mongoDefinitions');
 
 MongoDefinitions.Service.collection.drop();
 MongoDefinitions.ServiceStep.collection.drop();

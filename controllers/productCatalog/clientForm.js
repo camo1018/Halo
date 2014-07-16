@@ -1,9 +1,11 @@
 module.exports = function(app, modules) {
-	app.get('/clientForm', function(req, res) {
+    var section = '/productCatalog/';
+
+	app.get(section + 'clientForm', function(req, res) {
 		res.render('productCatalog/clientForm.html');
 	});
 
-	app.get('/actions/submitClientInfo', function(req, res) {
+	app.get('/actions' + section + 'submitClientInfo', function(req, res) {
 		console.log('Submitting client info to the server.');
 		var firstName = req.query.firstName;
 		var lastName = req.query.lastName;

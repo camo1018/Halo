@@ -9,7 +9,7 @@ var mongoHostname = 'mongodb://127.0.0.1:27017/halo';
 mongoose.connect(mongoHostname);
 exports.Mongoose = mongoose;
 
-var mongoDefinitions = require('./classes/mongoDefinitions');
+var mongoDefinitions = require('./models/mongoDefinitions');
 exports.MongoDefinitions = mongoDefinitions;
 
 /* No LINQ support yet */
