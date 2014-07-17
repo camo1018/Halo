@@ -37,6 +37,7 @@ module.exports = function(app, modules) {
                         throw err;
                     if (result == true) {
                         req.session.username = username;
+                        res.send('login-success');
                     }
                     else {
                         res.send('login-fail');

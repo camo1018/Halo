@@ -20,6 +20,8 @@
 </head>
 <body>
 
+<h2 class="text-center center top-10">Sign in to your merchandise portal</h2>
+
 <div class="login-div center">
     <div id="login-error" class="alert alert-danger not-visible" role="alert">
         <strong>Login failed</strong>
@@ -27,16 +29,17 @@
     </div>
     <div class="login-wrapper">
         <div class="login-inner">
-            <form name="login-form">
+            <form name="login-form" data-bind="submit: submitLogin">
                 <span>Username</span>
-                <input id="username-field" name="username" type="text" placeholder="Enter your username" class="form-control form-inner">
+                <input id="username-field" name="username" type="text" data-bind="text: username" placeholder="Enter your username" class="form-control form-inner">
                 <span>Password</span>
-                <input id="password-field" name="password" type="password" placeholder="Enter your password" class="form-control form-inner">
+                <input id="password-field" name="password" type="password" data-bind="text: password" placeholder="Enter your password" class="form-control form-inner">
                 <br>
-                <input id="login-submit-button" name="submit" type="submit" value="Log in" class="btn btn-success">
+                <input id="login-submit-button" name="submit" type="submit" value="Log in" class="btn btn-success block-center">
             </form>
         </div>
     </div>
+    <a id="forgot-password" class="pull-right" href="#">Forgot your password?</a>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -44,7 +47,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/lib/bootstrap.min.js"></script>
 <script src="/js/lib/knockout-3.1.0.js"></script>
-<script src="/viewmodels/viewmodels.js"></script>
+<script src="/js/viewmodels/login.js"></script>
 <script src="/js/clientAdministration/login.js"></script>
 </body>
 </html>
