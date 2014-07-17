@@ -41,12 +41,15 @@ app.get('/', function(req, res) {
 // });
 
 // Controller Initialization
+/* Product Catalog */
 require('./controllers/productCatalog/productCatalog.js')(app, modules);
 require('./controllers/productCatalog/stepSelection.js')(app, modules);
 require('./controllers/productCatalog/productView.js')(app, modules);
 require('./controllers/productCatalog/review.js')(app, modules);
 
+/* Client Administration */
 require('./controllers/clientAdministration/login.js')(app, modules);
+require('./controllers/clientAdministration/registration.js')(app, modules);
 
 console.log("Server started at port 8000.");
 
