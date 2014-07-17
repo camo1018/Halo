@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<h2 class="text-center center top-10">Sign in to your merchandise portal</h2>
+<h2 class="text-center center top-10">Welcome to your portable selection room application.<br>Please set-up your new account.</h2>
 
 <div class="login-wrapper center">
     <div id="login-error" class="alert alert-danger not-visible" role="alert">
@@ -29,17 +29,18 @@
     </div>
     <div class="box-shadow-overlay">
         <div class="login-inner">
-            <form name="login-form" data-bind="submit: submitLogin">
+            <form name="registration-form" data-bind="submit: submitRegistration">
                 <span>Username</span>
                 <input id="username-field" name="username" type="text" data-bind="text: username" placeholder="Enter your username" class="form-control form-inner">
                 <span>Password</span>
                 <input id="password-field" name="password" type="password" data-bind="text: password" placeholder="Enter your password" class="form-control form-inner">
+                <span>Confirm your password</span>
+                <input id="password-confirm-field" name="password-confirm" type="password" data-bind="text: passwordConfirm" placeholder="Confirm your password" class="form-control form-inner">
                 <br>
-                <input id="login-submit-button" name="submit" type="submit" value="Log in" class="btn btn-success block-center">
+                <input id="register-button" name="submit" type="submit" value="Register" class="btn btn-success block-center">
             </form>
         </div>
     </div>
-    <a id="forgot-password" class="pull-right" href="#">Forgot your password?</a>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -47,7 +48,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/lib/bootstrap.min.js"></script>
 <script src="/js/lib/knockout-3.1.0.js"></script>
-<script src="/js/viewmodels/login.js"></script>
-<script src="/js/clientAdministration/login.js"></script>
+<script src="/js/viewmodels/registration.js"></script>
+<script src="/js/clientAdministration/registration.js"></script>
 </body>
 </html>
