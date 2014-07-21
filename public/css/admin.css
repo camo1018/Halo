@@ -73,6 +73,10 @@ input {
 
 /* Setup Wizard */
 
+.wizard-steps-div {
+    min-width: 300px;
+}
+
 .wizard-steps-wrapper {
     padding-top: 5%;
     width: 80%;
@@ -80,8 +84,19 @@ input {
 }
 
 .wizard-step {
-    width: 25%;
-    float: left;
+    width: 20%;
+    display: inline-block;
+    min-width: 250px;
+}
+
+.wizard-step-circle {
+    background-color: #00AA00;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: auto;
+
+    color: #FFFFFF;
 }
 
 /* Setup Pages */
