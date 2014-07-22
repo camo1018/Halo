@@ -19,36 +19,38 @@
     <![endif]-->
 </head>
 <body>
+<% include ../../../views/templates/header.ejs %>
 
 <div class="text-center center top-10">
     <h1>Get Started in 4 Easy Steps!</h1>
     <h3>Our wizard will make setting up your catalog easy.</h3>
     <div class="wizard-steps-wrapper">
         <div class="wizard-step">
-            <div class="wizard-step-circle">
-                <h2>1</h2>
+            <div class="step-circle">
+                <h2 class="wizard-step-text">1</h2>
             </div>
             <h3>Company Info</h3>
         </div>
         <div class="wizard-step">
-            <div class="wizard-step-circle">
-                <h2>2</h2>
+            <div class="step-circle">
+                <h2 class="wizard-step-text">2</h2>
             </div>
             <h3>Add Products</h3>
         </div>
         <div class="wizard-step">
-            <div class="wizard-step-circle">
-                <h2>3</h2>
+            <div class="step-circle">
+                <h2 class="wizard-step-text">3</h2>
             </div>
             <h3>Options & Preview</h3>
         </div>
         <div class="wizard-step">
-            <div class="wizard-step-circle">
-                <h2>4</h2>
+            <div class="step-circle">
+                <h2 class="wizard-step-text">4</h2>
             </div>
             <h3>Dashboard</h3>
         </div>
     </div>
+    <input type="button" class="btn wizard-step-button" value="Go to Step 1">
 </div>
 
 </div>
