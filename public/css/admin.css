@@ -25,6 +25,13 @@ input[type="button"]:hover {
     color: #f0ad4e;
 }
 
+hr {
+    border-color: #999999;
+    opacity: 0.5;
+    width: 90%;
+    margin-bottom: 0;
+}
+
 .main {
     position: absolute;
     top: 50px;
@@ -38,14 +45,6 @@ input[type="button"]:hover {
     color: black;
     font-weight: bold;
     font-size: 20px;
-}
-
-.step-circle {
-    background-color: #00AA00;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin: auto;
 }
 
 .not-displayed {
@@ -122,6 +121,14 @@ input[type="button"]:hover {
     min-width: 200px;
 }
 
+.wizard-step-circle {
+    background-color: #00AA00;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: auto;
+}
+
 .wizard-step-text {
     display: inline-block;
     line-height: 20px;
@@ -137,14 +144,76 @@ input[type="button"]:hover {
 
 /* Setup Pages */
 
-.wizard-step-header {
-    left: 2%;
-    top: 2%;
-
+.step-header {
+    left: 30px;
+    top: 20px;
+    min-width: 330px;
     position: absolute;
 }
 
+.step-circle {
+    background-color: #00AA00;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: auto;
+    display: inline-block;
+}
+
+.step-text {
+    display: inline-block;
+    font-size: 50px;
+    line-height: 60px;
+    color: #FFFFFF;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.step-header h3 {
+    padding-left: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 26px;
+    font-weight: bolder;
+}
+
 /* Company Info */
+
 .company-information-panel {
-    
+    top: 200px;
+    left: 50px;
+    width: 35%;
+    min-width: 250px;
+    max-width: 450px;
+    position: absolute;
+}
+
+.header h3 {
+    color: #888888;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.inner p {
+    padding-bottom: 5px;
+}
+
+.inner label {
+    font-size: 13px;
+    display: block;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.company-information-panel .inner {
+    padding-top: 20px;
+    width: 90%;
+    margin: auto;
+}
+
+.company-message-panel {
+    top: 200px;
+    right: 0px;
 }

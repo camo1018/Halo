@@ -22,7 +22,36 @@
 <% include ../../../views/templates/header.ejs %>
 
 <div class="text-center center main">
-    <div
+    <div class="step-header">
+        <div class="step-circle">
+            <h2 class="step-text">1</h2>
+        </div>
+        <h3 class="inline">Company Info</h3>
+    </div>
+    <div class="company-information-panel box-shadow-overlay">
+        <div class="header">
+            <h3>ENTER INFORMATION</h3>
+        </div>
+        <hr>
+        <div class="inner">
+            <p>
+                <label>Enter Company Name</label>
+                <input class="form-control" id="company-name">
+            </p>
+            <p>
+                <label>Primary Contact Email</label>
+                <input class="form-control" id="contact-email">
+            </p>
+            <p>
+                <label>Billing Address</label>
+                <input class="form-control" id="billing-address">
+            </p>
+            <p>
+                <label>Contact Phone Number</label>
+                <input class="form-control" id="contact-phone-number">
+            </p>
+        </div>
+    </div>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
