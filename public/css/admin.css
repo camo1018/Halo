@@ -132,6 +132,22 @@ hr {
     display: inline-block;
 }
 
+.halo-progress-bar .step-dot.current {
+    background-color: green;
+}
+
+.halo-progress-bar .step-text.current {
+    color: green;
+}
+
+.halo-progress-bar .step-dot.completed {
+    background-color: orangered;
+}
+
+.halo-progress-bar .step-text.completed {
+    color: orangered;
+}
+
 /* Login and Registration */
 
 .login-wrapper {

@@ -1,17 +1,17 @@
 <div class="halo-progress-bar">
     <div class="halo-progress-bar-pusher"></div>
-    <div class="step">
-        <div class="step-dot"></div>
-        <label class="step-text">Step 1</label>
+    <div id="progress-step-1" class="step">
+        <div data-bind="css: { current: stepNumber() == 1, completed: stepNumber() > 1 }" class="step-dot"></div>
+        <label data-bind="css: { current: stepNumber() == 1, completed: stepNumber() > 1 }" class="step-text">Step 1</label>
     </div>
     <div class="bar"></div>
-    <div class="step">
-        <div class="step-dot"></div>
-        <label class="step-text">Step 2</label>
+    <div id="progress-step-2" class="step">
+        <div data-bind="css: { current: stepNumber() == 2, completed: stepNumber() > 2 }" class="step-dot"></div>
+        <label data-bind="css: { current: stepNumber() == 2, completed: stepNumber() > 2 }" class="step-text">Step 2</label>
     </div>
     <div class="bar"></div>
-    <div class="step">
-        <div class="step-dot"></div>
-        <label class="step-text">Step 3</label>
+    <div id="progress-step-3" class="step">
+        <div data-bind="css: { current: stepNumber() == 3, completed: stepNumber() > 3 }" class="step-dot"></div>
+        <label data-bind="css: { current: stepNumber() == 3, completed: stepNumber() > 3 }" class="step-text">Step 3</label>
     </div>
 </div>
