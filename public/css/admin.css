@@ -25,11 +25,39 @@ input[type="button"]:hover {
     color: #f0ad4e;
 }
 
+input[type="button"]:active,input[type="button"]:focus {
+    color: #2b94ee;
+}
+
 hr {
     border-color: #999999;
     opacity: 0.5;
     width: 90%;
     margin-bottom: 0;
+}
+
+.header h3 {
+    color: #888888;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+    white-space: normal;
+}
+
+.inner p {
+    padding-bottom: 5px;
+}
+
+.inner label {
+    font-size: 13px;
+    display: block;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.inner textarea {
+    height: 150px;
 }
 
 .main {
@@ -244,6 +272,15 @@ hr {
     display: inline-block;
 }
 
+.step-detail-header {
+    position: absolute;
+    left: 160px;
+    top: -70px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #444444;
+}
+
 /* Company Info */
 
 .company-panels {
@@ -270,30 +307,6 @@ hr {
     margin-left: 25%;
     display: inline-block;
     vertical-align: top;
-}
-
-.header h3 {
-    color: #888888;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: left;
-    padding-left: 15px;
-    white-space: normal;
-}
-
-.inner p {
-    padding-bottom: 5px;
-}
-
-.inner label {
-    font-size: 13px;
-    display: block;
-    text-align: left;
-    padding-left: 5px;
-}
-
-.inner textarea {
-    height: 150px;
 }
 
 .company-message-panel .box-shadow-overlay {
@@ -339,4 +352,47 @@ hr {
 
 .company-finish-button {
     margin-top: 50px;
+}
+
+/* Product Catalog */
+.catalog-main-panel {
+    position: absolute;
+
+    top: 200px;
+    left: 30px;
+
+    width: 90%;
+}
+
+.catalog-category-panel {
+    display: inline-block;
+
+    min-width: 100px;
+    max-width: 140px;
+    width: 10%;
+
+    float: left;
+}
+
+.catalog-category-panel .category-selector:first-child {
+    border-top: 1px solid #777777;
+}
+
+.catalog-category-panel .category-selector {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    border-radius: 0;
+    border: 1px solid #777777;
+    border-top: 0;
+
+    font-family: Verdana, sans-serif;
+}
+
+.catalog-category-panel .category-selector .selected {
+    
+}
+
+.catalog-detail-panel {
+    display: inline-block;
 }
