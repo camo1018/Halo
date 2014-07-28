@@ -52,6 +52,7 @@ require('./controllers/clientAdministration/login.js')(app, modules);
 require('./controllers/clientAdministration/registration.js')(app, modules);
 require('./controllers/clientAdministration/setup/setupWizard.js')(app, modules);
 require('./controllers/clientAdministration/setup/companyInfo.js')(app, modules);
+require('./controllers/clientAdministration/setup/productCatalog.js')(app, modules);
 
 console.log("Server started at port 8000.");
 
