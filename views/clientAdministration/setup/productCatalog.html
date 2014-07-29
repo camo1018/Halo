@@ -36,17 +36,51 @@
                 <input type="button" class="btn category-selector" value="Test 1" />
             </div>
         </div>
+        <div class="catalog-detail-panel">
+            <div class="catalog-detail-panel-header">
+                <div class="dropdown reseller-select">
+                    <button class="btn btn-default dropdown-toggle reseller-select-dropdown" type="button" id="reseller-select" data-toggle="dropdown">
+                        Select your reseller
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu reseller-menu" role="menu" aria-labelledby="reseller-select">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Batesville</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">AMC AMclkm doijawd</a></li>
+                    </ul>
+                </div>
+                <div class="reseller-authorization">
+                    <input id="reseller-authorization-checkbox" type="checkbox">
+                    <span>I am an authorized COMPANY reseller.</span>
+                </div>
+                <input type="text" id="catalog-search" class="form-control form-inner catalog-search" placeholder="Search by Name or Sku#">
+                <input type="button" id="catalog-search-button" class="btn catalog-search-button" value="Go">
+            </div>
+            <div id="catalog-detail-product-container" class="catalog-detail-product-container" data-bind="template: { name: 'product-template', foreach: products }">
+            </div>
+        </div>
     </div>
     <div class="catalog-finish-div">
         <input type="button" class="step-finish-button btn btn-lg pull-right" value="Go to Step 3">
     </div>
 </div>
 
+<script type="text/html" id="product-template">
+    <div class="catalog-detail-panel-product">
+        <input class="catalog-detail-product-checkbox" type="checkbox" />
+        <img class="catalog-detail-product-image" data-bind="attr: { src: imgUrl }" />
+        <div class="catalog-detail-product-info-wrapper">
+            <p class="text-muted bold" data-bind="text: name"></p>
+            <p data-bind="text: 'MSRP $' + value"></p>
+        </div>
+    </div>
+</script>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/lib/bootstrap.min.js"></script>
 <script src="/js/lib/knockout-3.1.0.js"></script>
+<script src="/js/lib/masonry.pkgd.min.js"></script>
 <script src="/js/viewmodels/productCatalog.js"></script>
 <script src="/js/clientAdministration/setup/productCatalog.js"></script>
 </body>

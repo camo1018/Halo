@@ -36,6 +36,10 @@ hr {
     margin-bottom: 0;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .header h3 {
     color: #888888;
     font-size: 20px;
@@ -362,6 +366,10 @@ hr {
     left: 30px;
 
     width: 90%;
+
+    text-align: left;
+
+    white-space: nowrap;
 }
 
 .catalog-category-panel {
@@ -402,11 +410,95 @@ hr {
 
 .catalog-detail-panel {
     display: inline-block;
+
+    min-width: 1000px;
+    max-width: 2000px;
+    width: 90%;
+    height: 580px;
+
+    border: 1px solid #CCCCCC;
+}
+
+.catalog-detail-panel-header {
+    padding-top: 20px;
+    padding-left: 60px;
+}
+
+.catalog-detail-panel .reseller-select {
+    display: inline;
+}
+
+.catalog-detail-panel .reseller-select-dropdown {
+    width: 300px;
+    height: 50px;
+
+    background: linear-gradient(#FFFFFF, #DEDEDE);
+    border-radius: 8px;
+}
+
+.catalog-detail-panel .reseller-select .reseller-menu {
+    width: 300px;
+    left: 60px;
+
+    text-align: center;
+}
+
+.catalog-detail-panel .reseller-authorization {
+    padding-left: 25px;
+
+    display: inline;
+}
+
+.catalog-detail-panel .catalog-search {
+    display: inline;
+    width: 300px;
+    height: 50px;
+
+    border-radius: 7px;
+    margin-top: 0;
+    margin-left: 50px;
+}
+
+.catalog-detail-panel .catalog-search-button {
+    display: inline;
+    width: 50px;
+    height: 50px;
+
+    border-radius: 7px;
+    margin-top: 0;
+    margin-left: 5px;
+}
+
+.catalog-detail-panel .catalog-detail-product-container {
+    padding-top: 30px;
+    padding-left: 30px;
+    width: 90%;
+}
+
+.catalog-detail-panel-product {
+
+}
+
+.catalog-detail-product-checkbox {
+    width: 30px;
+    height: 30px;
+
+    vertical-align: top;
+}
+
+.catalog-detail-product-image {
+    width: 130px;
+    height: 100px;
+}
+
+.catalog-detail-product-info-wrapper {
+    display: inline-block;
+
 }
 
 .catalog-finish-div {
     position: absolute;
-    top: 600px;
+    top: 800px;
 
     min-width: 1000px;
     width: 95%;
