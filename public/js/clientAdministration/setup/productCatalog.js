@@ -5,7 +5,7 @@ ko.applyBindings(productCatalogViewmodel);
 
 $(function() {
     $('#catalog-detail-product-container').masonry({
-        columnWidth: 200,
-        itemSelector: '.catalog-detail-panel-product'
+        itemSelector: '.catalog-detail-panel-product',
+        gutter: 50
     });
 });
