@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Halo - Client Administration - Setup</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/halo.css" rel="stylesheet">
+    <link href="/css/admin.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<% include ../../../views/templates/header.ejs %>
+<% include ../../../views/templates/progress.ejs %>
+
+<div class="text-center center main">
+    <div class="step-header">
+        <div class="step-circle">
+            <h2 class="step-text">3</h2>
+        </div>
+        <h3>Preview Your Selections</h3>
+    </div>
+    <div class="preview-main-wrapper">
+        <div class="preview-main-panel">
+            <h3 class="preview-main-header">Type</h3>
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner preview-carousel-stage">
+                    <div class="item active">
+                        <img src="/img/image.png">
+                        <p>Price: $3400</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="/img/image.png">
+                        <p>Price: $3400</p>
+                    </div>
+                </div>
+                <div class="preview-carousel-controls">
+                    <input type="button" class="left carousel-button carousel-left" href="#carousel" role="button" data-slide="prev" />
+                    <ol class="carousel-indicators carousel-indicator-wrapper">
+                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel" data-slide-to="1" class=""></li>
+                    </ol>
+                    <input type="button" class="right carousel-button carousel-right" href="#carousel" role="button" data-slide="next" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/lib/bootstrap.min.js"></script>
+<script src="/js/lib/knockout-3.1.0.js"></script>
+<script src="/js/lib/masonry.pkgd.min.js"></script>
+<script src="/js/viewmodels/preview.js"></script>
+<script src="/js/clientAdministration/setup/preview.js"></script>
+</body>
+</html>
