@@ -33,30 +33,32 @@
         <div class="preview-main-panel">
             <h3 class="preview-main-header">Type</h3>
             <div id="carousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner preview-carousel-stage">
-                    <div class="item active">
-                        <img src="/img/image.png">
-                        <p>Price: $3400</p>
-                    </div>
-
-                    <div class="item">
-                        <img src="/img/image.png">
-                        <p>Price: $3400</p>
-                    </div>
+                <div class="carousel-inner preview-carousel-stage" data-bind="template: { name: 'preview-product-template', foreach: selectedProducts }">
                 </div>
                 <div class="preview-carousel-controls">
                     <input type="button" class="left carousel-button carousel-left" href="#carousel" role="button" data-slide="prev" />
-                    <ol class="carousel-indicators carousel-indicator-wrapper">
-                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel" data-slide-to="1" class=""></li>
+                    <ol class="carousel-indicators carousel-indicator-wrapper" data-bind="foreach: selectedProducts">
+                        <li data-target="#carousel" data-bind="attr: { 'data-slide-to': $index }, css: { active: $index() == 0 }" class="carousel-indicator"></li>
                     </ol>
                     <input type="button" class="right carousel-button carousel-right" href="#carousel" role="button" data-slide="next" />
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="preview-finish-div">
+        <input type="button" class="step-finish-button btn btn-lg pull-right" value="Publish">
     </div>
 </div>
+
+<script type="text/html" id="preview-product-template">
+    <div class="item" data-bind="css: { active: $index() == 0 }">
+        <p class="preview-item-name" data-bind="text: name"></p>
+        <img class="preview-item-image" data-bind="attr: { src: imgUrl }" />
+        <p class="preview-item-price" data-bind="text: 'Price: $' + price"></p>
+        <input type="button" class="preview-item-button preview-item-edit" />
+        <input type="button" class="preview-item-button preview-item-delete" />
+    </div>
+</script>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
