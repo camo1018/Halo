@@ -1,5 +1,7 @@
 function PreviewViewmodel() {
-    this.selectedProducts = [
+    var self = this;
+
+    self.selectedProducts = [
         { name: 'Test 1', price: '5500', imgUrl: '/img/image.png' },
         { name: 'Test 2', price: '4000', imgUrl: '/img/image.png' },
         { name: 'Test 3', price: '2555', imgUrl: '/img/image.png' },
@@ -10,6 +12,6 @@ function PreviewViewmodel() {
         { name: 'Test 8', price: '1000', imgUrl: '/img/image.png' }
     ];
 
-    this.stepNumber = ko.observable(3);
+    self.stepNumber = ko.observable(3);
 }
 var previewViewmodel = new PreviewViewmodel();

@@ -40,6 +40,10 @@ hr {
     font-weight: bold;
 }
 
+.inline {
+    display: inline;
+}
+
 .header h3 {
     color: #888888;
     font-size: 20px;
@@ -467,6 +471,8 @@ hr {
 }
 
 .catalog-detail-panel .catalog-detail-product-container {
+    position: relative;
+
     padding-top: 30px;
     padding-left: 30px;
     width: 99%;
@@ -490,6 +496,41 @@ hr {
 
 .catalog-detail-product-info-wrapper {
     display: inline-block;
+}
+
+.catalog-detail-product-upload-category {
+
+}
+
+.catalog-detail-product-upload-category .category-checkboxes {
+    display: inline;
+    margin-left: 25px;
+}
+
+.catalog-detail-product-upload-category .category-checkbox {
+    display: inline;
+}
+
+.catalog-detail-product-upload-category .category-checkbox-label {
+    display: inline;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-right: 15px;
+}
+
+.catalog-detail-product-container .catalog-detail-product-upload-information {
+    position: absolute;
+
+    top: 100px;
+    left: 70px;
+}
+
+.catalog-detail-product-upload-information .information-inner {
+    width: 90%;
+
+    display: block;
 }
 
 .catalog-finish-div {
@@ -651,4 +692,34 @@ hr {
 
     background: url('../img/delete-button.png') no-repeat;
     background-size: contain;
+}
+
+/* Published */
+
+.published-header {
+    position: absolute;
+    top: 200px;
+
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.published-info {
+    position: absolute;
+    top: 300px;
+
+    left: 0;
+    right: 0;
+    margin: 20px auto auto;
+
+    font-size: 18px;
+}
+
+.published-finish-div {
+    position: absolute;
+    top: 800px;
+
+    min-width: 1000px;
+    width: 95%;
 }

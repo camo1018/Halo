@@ -1,11 +1,13 @@
 function RegistrationViewmodel() {
-    this.username = ko.observable();
-    this.password = ko.observable();
-    this.passwordConfirm = ko.observable();
+    var self = this;
+
+    self.username = ko.observable();
+    self.password = ko.observable();
+    self.passwordConfirm = ko.observable();
 
 
-    this.submitRegistration = function() {
-        var params = { username: this.username, password: this.password, passwordConfirm: this.passwordConfirm };
+    self.submitRegistration = function() {
+        var params = { username: self.username, password: self.password, passwordConfirm: self.passwordConfirm };
         $.post('/actions/clientAdministration/register', params, function(data) {
             switch (data) {
                 case 'username-exists':

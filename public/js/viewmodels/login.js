@@ -1,9 +1,11 @@
 function LoginViewmodel() {
-    this.username = ko.observable();
-    this.password = ko.observable();
+    var self = this;
 
-    this.submitLogin = function() {
-        var params = { username: this.username, password: this.password };
+    self.username = ko.observable();
+    self.password = ko.observable();
+
+    self.submitLogin = function() {
+        var params = { username: self.username, password: self.password };
         $.post('/actions/clientAdministration/login', params, function(data) {
             switch (data) {
                 case 'login-fail':

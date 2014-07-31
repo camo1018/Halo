@@ -3,9 +3,7 @@
  */
 ko.applyBindings(productCatalogViewmodel);
 
-$(function() {
-    $('#catalog-detail-product-container').masonry({
-        itemSelector: '.catalog-detail-panel-product',
-        gutter: 50
-    });
+var masonry = $('#catalog-detail-product-container').masonry({
+    itemSelector: '.catalog-detail-panel-product',
+    gutter: 50
 });

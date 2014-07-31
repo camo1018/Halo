@@ -31,13 +31,19 @@
     </div>
     <div class="catalog-main-panel">
         <h3 class="step-detail-header">Search The Catalog</h3>
-        <div class="catalog-category-panel">
-            <input type="button" class="category-selector not-selected" value="Test 1" />
-            <input type="button" class="category-selector selected" value="Test 2" />
-            <input type="button" class="category-selector not-selected" value="Test 3" />
+        <div class="catalog-category-panel" data-bind="foreach: categories">
+            <!-- ko if: $index() == 0 -->
+            <input type="button" class="category-selector" data-bind="attr: { value: name }, css: { selected: $parent.currentCategoryIndex() == $index(), 'not-selected': $parent.currentCategoryIndex() != $index() }, click: function() { $parent.setCategory($index()) }" />
+            <!-- /ko -->
+            <!-- ko if: $index() > 0 -->
+            <input type="button" class="category-selector" data-bind="attr: { value: name }, css: { selected: $parent.currentCategoryIndex() == $index(), 'not-selected': $parent.currentCategoryIndex() != $index() }, click: function() { $parent.setCategory($index()) }" />
+            <!-- /ko -->
+            <!-- ko if: $index() == ($parent.categories.length - 1) -->
+            <input type="button" class="category-selector" data-bind="css: { selected: $parent.currentCategoryIndex() == -1, 'not-selected': $parent.currentCategoryIndex() != -1 }, click: function() { $parent.setCategory(-1) }" value="Upload Product" />
+            <!-- /ko -->
         </div>
         <div class="catalog-detail-panel">
-            <div class="catalog-detail-panel-header">
+            <div class="catalog-detail-panel-header" data-bind="visible: currentCategoryIndex() >= 0">
                 <div class="dropdown reseller-select">
                     <button class="btn btn-default dropdown-toggle reseller-select-dropdown" type="button" id="reseller-select" data-toggle="dropdown">
                         Select your reseller
@@ -55,7 +61,39 @@
                 <input type="text" id="catalog-search" class="form-control form-inner catalog-search" placeholder="Search by Name or Sku#">
                 <input type="button" id="catalog-search-button" class="btn catalog-search-button" value="Go">
             </div>
-            <div id="catalog-detail-product-container" class="catalog-detail-product-container" data-bind="template: { name: 'product-template', foreach: products }">
+            <div class="catalog-detail-panel-header" data-bind="visible: currentCategoryIndex() == -1">
+                <div class="catalog-detail-product-upload-category">
+                    <strong class="inline">Select a Category</strong>
+                    <div class="category-checkboxes">
+                        <input type="checkbox" class="category-checkbox" />
+                        <label class="category-checkbox-label text-muted">Caskets</label>
+                        <input type="checkbox" class="category-checkbox" />
+                        <label class="category-checkbox-label text-muted">Urns</label>
+                        <input type="checkbox" class="category-checkbox" />
+                        <label class="category-checkbox-label text-muted">Vaults</label>
+                        <input type="checkbox" class="category-checkbox" />
+                        <label class="category-checkbox-label text-muted">Floral</label>
+                        <input type="checkbox" class="category-checkbox" />
+                        <label class="category-checkbox-label text-muted">Keepsakes</label>
+                    </div>
+                </div>
+            </div>
+            <div id="catalog-detail-product-container" class="catalog-detail-product-container" data-bind="visible: currentCategoryIndex() >= 0, template: { name: 'product-template', foreach: products }">
+            </div>
+            <div class="catalog-detail-product-container" data-bind="visible: currentCategoryIndex() == -1">
+                <div class="catalog-detail-product-upload-information">
+                    <h4 class="information-header">Product Information</h4>
+                    <div class="information-inner">
+                        <div>
+                            <label class="information-product-label">Product Name</label>
+                            <input type="text" class="form-control information-product-input" />
+                        </div>
+                        <div>
+                            <label class="information-product-label">Display Price $</label>
+                            <input type="text" class="form-control information-product-input" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
