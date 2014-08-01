@@ -49,9 +49,8 @@
                         Select your reseller
                         <span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu reseller-menu" role="menu" aria-labelledby="reseller-select">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Batesville</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">AMC AMclkm doijawd</a></li>
+                    <ul class="dropdown-menu reseller-menu" role="menu" aria-labelledby="reseller-select" data-bind="foreach: resellers">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-bind="text: name "></a></li>
                     </ul>
                 </div>
                 <div class="reseller-authorization">
@@ -84,14 +83,22 @@
                 <div class="catalog-detail-product-upload-information">
                     <h4 class="information-header">Product Information</h4>
                     <div class="information-inner">
-                        <div>
+                        <div class="information-row">
                             <label class="information-product-label">Product Name</label>
                             <input type="text" class="form-control information-product-input" />
                         </div>
-                        <div>
+                        <div class="information-row">
                             <label class="information-product-label">Display Price $</label>
                             <input type="text" class="form-control information-product-input" />
                         </div>
+                    </div>
+                    <div>
+                        <div class="pull-left">
+                            <input type="button" class="company-message-panel-rotate left">
+                            <input type="button" class="company-message-panel-rotate right">
+                            <p><input type="button" class="btn" value="Upload Logo"></p>
+                        </div>
+                        <img class="company-message-panel-image" src="/img/image.png">
                     </div>
                 </div>
             </div>

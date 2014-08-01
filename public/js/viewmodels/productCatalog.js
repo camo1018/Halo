@@ -17,6 +17,11 @@ function ProductCatalogViewmodel() {
         { name: 'Test 8', value: '1000', imgUrl: '/img/image.png' }
     ]);
 
+    self.resellers = ko.observableArray([
+        { name: 'Batesville Casket Company', id: 'batesville' },
+        { name: 'Atlanta Casket Company', id: 'atlanta' }
+    ]);
+
     self.currentCategoryIndex = ko.observable(0);
 
     self.setCategory = function(index) {
