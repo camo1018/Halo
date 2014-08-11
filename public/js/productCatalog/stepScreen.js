@@ -73,8 +73,8 @@ $(function() {
 
 		$('#continue').bind('click', function() {
 			var params = { stepOrder: selectedStep.html() };
-			$.get('/actions/selectStep', params, function() {
-                $('[class*=step], #continue, .homeButton').animate({
+			$.get('/actions/productCatalog/selectStep', params, function() {
+                $('[class*=step], #continue, #checkout, .homeButton').animate({
                     opacity: 0
                 }, 1000, function () {
                     document.location = "productView";
@@ -83,7 +83,7 @@ $(function() {
 		});
 
         $('#checkout').bind('click', function() {
-            $('[class*=step], #continue, .homeButton').animate({
+            $('[class*=step], #continue, #checkout, .homeButton').animate({
                 opacity: 0
             }, 1000, function() {
                 document.location = 'review';
@@ -91,7 +91,7 @@ $(function() {
         });
 
 		$('.homeButton').bind('click', function() {
-			$('[class*=step], #continue, .homeButton').animate({
+			$('[class*=step], #continue, #checkout, .homeButton').animate({
 				opacity: 0
 			}, 1000, function() {
 				document.location = "intro";
