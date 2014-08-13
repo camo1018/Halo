@@ -30,7 +30,7 @@ $(function() {
             var productType = $(this).attr('productType');
             var productName = $(this).attr('productName');
             var params = { productType: productType, productName: productName };
-            $.get('/actions/getProduct', params, function(product) {
+            $.get('/actions/productCatalog/getProduct', params, function(product) {
                 $('#productName').html(product.name);
                 $('#productPrice').html(product.price);
                 $('#productImage').attr('src', product.imageUrl);
@@ -64,7 +64,7 @@ $(function() {
 
         $('#productCheck').bind('click', function () {
             var params = { product: selectedProduct };
-            $.get('/actions/selectProduct', params, function() {
+            $.get('/actions/productCatalog/selectProduct', params, function() {
                 $('.fadeIn').animate({
                     opacity: 0
                 }, 1000, function () {

@@ -7,6 +7,8 @@ module.exports = function(app, modules) {
 
 	app.get(section + 'serviceSelect', function(req, res) {
 		res.render('productCatalog/serviceSelect.html');
+        req.session.selectedProducts = [];
+        req.session.finishedSteps = [];
 	});
 
 	app.get('/actions' + section + 'selectTraditional', function(req, res) {
