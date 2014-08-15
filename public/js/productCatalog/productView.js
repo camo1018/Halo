@@ -38,30 +38,6 @@ $(function() {
             });
         });
 
-        $('#showOptions').bind('click', function () {
-            if (optionsStageAnimating)
-                return;
-
-            optionsStageAnimating = true;
-
-            if (optionsStageVisible) {
-                $('.optionsStage, .scrolling').animate({
-                    bottom: "-=200px"
-                }, 500, function () {
-                    optionsStageVisible = false;
-                    optionsStageAnimating = false;
-                });
-            }
-            else {
-                $('.optionsStage, .scrolling').animate({
-                    bottom: "+=200px"
-                }, 500, function () {
-                    optionsStageVisible = true;
-                    optionsStageAnimating = false;
-                });
-            }
-        });
-
         $('#productCheck').bind('click', function () {
             var params = { product: selectedProduct };
             $.get('/actions/productCatalog/selectProduct', params, function() {

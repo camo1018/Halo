@@ -17,38 +17,37 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="white">
+<body class="white center">
+    <div class="reviewPanel fadeIn" data-bind="foreach: products">
+        <!-- ko if: $index() == 0 -->
+        <h2 class="reviewHeader">Review Your Selections</h2>
+        <!-- /ko -->
 
-<div class="reviewPanel fadeIn" data-bind="foreach: products">
-    <!-- ko if: $index() == 0 -->
-    <h2 class="reviewHeader">Review Your Selections</h2>
-    <!-- /ko -->
+        <hr class="reviewSeparator">
+        <div class="reviewItemList">
+            <h4 class="reviewItem" data-bind="text: name"></h4>
+            <h4 class="reviewItemPrice" data-bind="text: '$' + price"></h4>
+        </div>
+        <hr class="reviewSeparator">
 
-    <hr class="reviewSeparator">
-    <div class="reviewItemList">
-        <h4 class="reviewItem" data-bind="text: name"></h4>
-        <h4 class="reviewItemPrice" data-bind="text: '$' + price"></h4>
+        <!-- ko if: $index() == 0 -->
+        <div class="reviewItemList">
+            <h4 class="reviewTotal">Total</h4>
+            <h4 class="reviewItemPrice" id="totalPriceLabel"></h4>
+        </div>
+        <button class="btn reviewApproveButton" id="approveButton">Approve</button>
+        <!-- /ko -->
     </div>
-    <hr class="reviewSeparator">
 
-    <!-- ko if: $index() == 0 -->
-    <div class="reviewItemList">
-        <h4 class="reviewTotal">Total</h4>
-        <h4 class="reviewItemPrice" id="totalPriceLabel"></h4>
+    <div class="reviewImageStage fadeIn">
+        <img class="reviewImage" src="/img/sampleCasket.png">
     </div>
-    <button class="btn reviewApproveButton" id="approveButton">Approve</button>
-    <!-- /ko -->
-</div>
 
-<div class="reviewImageStage fadeIn">
-    <img class="reviewImage" src="/img/sampleCasket.png">
-</div>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/js/lib/knockout-3.1.0.js"></script>
-<script src="/js/lib/bootstrap.min.js"></script>
-<script src="/js/productCatalog/review.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/lib/knockout-3.1.0.js"></script>
+    <script src="/js/lib/bootstrap.min.js"></script>
+    <script src="/js/productCatalog/review.js"></script>
 </body>
 </html>

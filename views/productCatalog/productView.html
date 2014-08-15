@@ -18,33 +18,35 @@
     <![endif]-->
   </head>
   <body class="white">
-
-    <input type="image" src="/img/showOptions.png" class="fadeIn showOptions scrolling" id="showOptions">
+    <div id="searchModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 id="searchModalLabel" class="modal-title">Search the Catalog</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="fadeIn imageStage">
-      <img class="productImage" id="productImage" src="/img/sampleCasket.png">
+        <img class="productImage" id="productImage" src="/img/sampleCasket.png">
     </div>
 
-    <div class="fadeIn productWrapper scrolling">
-      <h3 class="productInfo productName" id="productName">Product Name</h3>
-      <h3 class="productInfo">|</h3>
-      <h3 class="productInfo productPrice" id="productPrice">$1999</h3>
-      <input type="image" class="productInfo productCheck" id="productCheck" src="/img/check.png">
-    </div>
-
-    <div class="optionsStageDiv fadeIn">
-      <div class="optionsStage">
-        <table class="optionsProductTable">
-            <tr data-bind="foreach: products">
-                <td>
-                    <div class="optionsProductDiv">
-                        <input type="image" class="optionsProductImage" data-bind="attr: { src: imageUrl, productType: type, productName: name }">
-                        <p class="optionsProductLabel" data-bind="text: name"></p>
-                    </div>
-                </td>
-            </tr>
-        </table>
-      </div>
+    <div class="stageFooter">
+        <input type="image" src="/img/searchCatalog.png" class="fadeIn searchCatalogButton" id="searchCatalogButton" data-toggle="modal" data-target="#searchModal">
+        <div class="productCheck">
+            <input type="image" class="productInfo" id="productCheck" src="/img/check.png">
+        </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

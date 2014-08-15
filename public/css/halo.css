@@ -5,11 +5,15 @@ body {
 	height: 100%;
 
 	color: #FFFFFF;
-	text-align: center;
 }
 
 .white {
 	background-color: #FFFFFF;
+    color: black;
+}
+
+.center {
+    text-align: center;
 }
 
 .tagline {
@@ -220,10 +224,14 @@ body {
 	opacity: 0;
 } 
 
-.showOptions {
-	position: absolute;
-	left: 25px;
-	bottom: 30px;
+.stageFooter {
+    position: absolute;
+    left: 25px;
+    bottom: 30px;
+}
+
+.searchCatalogButton {
+    display: inline;
 }
 
 .productWrapper {
@@ -247,7 +255,7 @@ body {
 }
 
 .productCheck {
-	vertical-align: middle;
+    display: inline;
 }
 
 .imageStage{
@@ -255,6 +263,7 @@ body {
     margin-top: 50px;
     height: 80%;
     z-index: -1;
+    text-align: center;
 }
 
 .productImage {
@@ -304,10 +313,6 @@ body {
     margin-right: auto;
     height: 100%;
     max-width: 100%;
-}
-
-.scrolling{
-
 }
 
 /* End productView */
