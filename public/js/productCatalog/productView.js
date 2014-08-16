@@ -14,6 +14,11 @@ $(function() {
 
         ko.applyBindings(new productViewModel());
 
+        var masonry = $('#search-product-container').masonry({
+            itemSelector: '.search-product',
+            gutter: 50
+        });
+
         var optionsStageVisible = false;
         var optionsStageAnimating = false;
 
