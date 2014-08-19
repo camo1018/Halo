@@ -13,12 +13,15 @@ module.exports = function(app, modules) {
         var username = req.body.username;
         var password = req.body.password;
         var passwordHash = '';
+        var hasSetup = false;
 
         modules.Async.series([
             function(callback) {
                 modules.MongoDefinitions.ClientAdmin.User.findOne({ username: username }, function(err, user) {
                     if (err)
                         throw err;
+
+                    hasSetup = user.hasSetup;
 
                     // TODO: Only one of these will ever be true.
                     if (user == null || user.length == 0) {
@@ -37,7 +40,12 @@ module.exports = function(app, modules) {
                         throw err;
                     if (result == true) {
                         req.session.username = username;
-                        res.send('login-success');
+                        if (hasSetup) {
+                            res.send('login-success');
+                        }
+                        else {
+                            res.send('login-success-setup');
+                        }
                     }
                     else {
                         res.send('login-fail');

@@ -13,9 +13,11 @@ function LoginViewmodel() {
                 case 'login-fail':
                     $('#login-error').removeClass('not-visible');
                     break;
-                case 'login-success':
-                    // Success login
+                case 'login-success-setup':
+                    window.location = '/setup/setupWizard';
                     break;
+                case 'login-success':
+                    window.location= '/companyInfo';
             }
         });
     };
