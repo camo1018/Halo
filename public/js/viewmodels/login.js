@@ -14,10 +14,10 @@ function LoginViewmodel() {
                     $('#login-error').removeClass('not-visible');
                     break;
                 case 'login-success-setup':
-                    window.location = '/setup/setupWizard';
+                    window.location = '/clientAdministration/setup/setupWizard';
                     break;
                 case 'login-success':
-                    window.location= '/companyInfo';
+                    window.location= '/clientAdministration/companyInfo';
             }
         });
     };

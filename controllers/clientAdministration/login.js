@@ -21,8 +21,6 @@ module.exports = function(app, modules) {
                     if (err)
                         throw err;
 
-                    hasSetup = user.hasSetup;
-
                     // TODO: Only one of these will ever be true.
                     if (user == null || user.length == 0) {
                         res.send('login-fail');
@@ -30,6 +28,7 @@ module.exports = function(app, modules) {
                     }
                     else {
                         passwordHash = user.password;
+                        hasSetup = user.hasSetup;
                         callback(null);
                     }
                 });
