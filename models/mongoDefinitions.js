@@ -10,9 +10,11 @@ exports.ProductCatalog = {
 
 /* Client Administration Definitions */
 var clientAdminUser = require('./clientAdministration/user.js');
+var clientAdminCompanyInfo = require('./clientAdministration/companyInfo.js');
 
 exports.ClientAdmin = {
-    User: clientAdminUser.User
+    User: clientAdminUser.User,
+    CompanyInfo: clientAdminCompanyInfo.CompanyInfo
 }
 
 

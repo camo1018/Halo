@@ -26,6 +26,11 @@ module.exports = function(app, modules) {
                     callback('password-empty-error');
                 }
 
+                if (password != passwordConfirm) {
+                    res.send('password-mismatch-error');
+                    callback('password-mismatch-error');
+                }
+
                 modules.MongoDefinitions.ClientAdmin.User.find({ username: username }, 'username', function(err, users) {
                     if (err)
                         throw err;
@@ -54,7 +59,7 @@ module.exports = function(app, modules) {
             },
             function(callback) {
                 newUser.save();
-                res.send('registered');
+                res.send('registration-success');
                 callback(null);
             }
         ], function(err) {});

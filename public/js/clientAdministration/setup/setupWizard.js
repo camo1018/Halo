@@ -1,3 +1,5 @@
-/**
- * Created by Paul on 7/17/2014.
- */
+$(function() {
+    $('#nextStepButton').on('click', function() {
+        window.location = '/clientAdministration/setup/companyInfo';
+    });
+});

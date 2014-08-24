@@ -32,13 +32,13 @@ module.exports = function(app, modules) {
                         callback(null);
                     }
                 });
-            },
-            function(callback) {
-                modules.Bcrypt.compare(password, passwordHash, function(err, result) {
-                    if (err)
-                        throw err;
-                    if (result == true) {
-                        req.session.username = username;
+                    },
+                    function(callback) {
+                        modules.Bcrypt.compare(password, passwordHash, function(err, result) {
+                            if (err)
+                                throw err;
+                            if (result == true) {
+                                req.session.username = username;
                         if (hasSetup) {
                             res.send('login-success');
                         }

@@ -204,6 +204,15 @@ hr {
     margin: auto;
 }
 
+.registration-wrapper {
+    top: 25%;
+    width: 25%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
 /* Setup Wizard */
 
 .wizard-steps-div {
