@@ -33,24 +33,22 @@
         <h3 class="step-detail-header">Search The Catalog</h3>
         <div class="catalog-category-panel" data-bind="foreach: categories">
             <!-- ko if: $index() == 0 -->
-            <input type="button" class="category-selector" data-bind="attr: { value: name }, css: { selected: $parent.currentCategoryIndex() == $index(), 'not-selected': $parent.currentCategoryIndex() != $index() }, click: function() { $parent.setCategory($index()) }" />
+            <input type="button" class="category-selector" data-bind="attr: { value: stepName }, css: { selected: $parent.currentCategoryIndex() == $index(), 'not-selected': $parent.currentCategoryIndex() != $index() }, click: function() { $parent.setCategory($index()) }" />
             <!-- /ko -->
             <!-- ko if: $index() > 0 -->
-            <input type="button" class="category-selector" data-bind="attr: { value: name }, css: { selected: $parent.currentCategoryIndex() == $index(), 'not-selected': $parent.currentCategoryIndex() != $index() }, click: function() { $parent.setCategory($index()) }" />
+            <input type="button" class="category-selector" data-bind="attr: { value: stepName }, css: { selected: $parent.currentCategoryIndex() == $index(), 'not-selected': $parent.currentCategoryIndex() != $index() }, click: function() { $parent.setCategory($index()) }" />
             <!-- /ko -->
-            <!-- ko if: $index() == ($parent.categories.length - 1) -->
+            <!-- ko if: $index() == ($parent.categories().length - 1) -->
             <input type="button" class="category-selector" data-bind="css: { selected: $parent.currentCategoryIndex() == -1, 'not-selected': $parent.currentCategoryIndex() != -1 }, click: function() { $parent.setCategory(-1) }" value="Upload Product" />
             <!-- /ko -->
         </div>
         <div class="catalog-detail-panel">
             <div class="catalog-detail-panel-header" data-bind="visible: currentCategoryIndex() >= 0">
                 <div class="dropdown reseller-select">
-                    <button class="btn btn-default dropdown-toggle reseller-select-dropdown" type="button" id="reseller-select" data-toggle="dropdown">
-                        Select your reseller
-                        <span class="caret"></span>
+                    <button class="btn btn-default dropdown-toggle reseller-select-dropdown" type="button" id="reseller-select" data-toggle="dropdown" data-bind="html: currentReseller().name + ' <span class=&quot;caret&quot;></span>'">
                     </button>
                     <ul class="dropdown-menu reseller-menu" role="menu" aria-labelledby="reseller-select" data-bind="foreach: resellers">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-bind="text: name "></a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-bind="text: name, click: function() { $parent.setReseller($index()); }"></a></li>
                     </ul>
                 </div>
                 <div class="reseller-authorization">
@@ -63,17 +61,9 @@
             <div class="catalog-detail-panel-header" data-bind="visible: currentCategoryIndex() == -1">
                 <div class="catalog-detail-product-upload-category">
                     <strong class="inline">Select a Category</strong>
-                    <div class="category-checkboxes">
-                        <input type="checkbox" class="category-checkbox" />
-                        <label class="category-checkbox-label text-muted">Caskets</label>
-                        <input type="checkbox" class="category-checkbox" />
-                        <label class="category-checkbox-label text-muted">Urns</label>
-                        <input type="checkbox" class="category-checkbox" />
-                        <label class="category-checkbox-label text-muted">Vaults</label>
-                        <input type="checkbox" class="category-checkbox" />
-                        <label class="category-checkbox-label text-muted">Floral</label>
-                        <input type="checkbox" class="category-checkbox" />
-                        <label class="category-checkbox-label text-muted">Keepsakes</label>
+                    <div class="category-checkboxes" data-bind="foreach: categories">
+                        <input type="radio" name="category-checkboxes-group" class="category-checkbox" data-bind="attr: { value: stepName }, checked: $parent.uploadCategory" />
+                        <label class="category-checkbox-label text-muted" data-bind="text: stepName"></label>
                     </div>
                 </div>
             </div>
@@ -101,6 +91,9 @@
                     </div>
                     <img class="information-photo-image" src="/img/image.png">
                 </div>
+                <div class="catalog-detail-product-upload-button-container">
+                    <input type="button" class="btn" value="Upload Product">
+                </div>
             </div>
         </div>
     </div>
@@ -112,10 +105,10 @@
 <script type="text/html" id="product-template">
     <div class="catalog-detail-panel-product">
         <input class="catalog-detail-product-checkbox" type="checkbox" />
-        <img class="catalog-detail-product-image" data-bind="attr: { src: imgUrl }" />
+        <img class="catalog-detail-product-image" data-bind="attr: { src: imageUrl }" />
         <div class="catalog-detail-product-info-wrapper">
             <p class="text-muted bold" data-bind="text: name"></p>
-            <p data-bind="text: 'MSRP $' + value"></p>
+            <p data-bind="text: 'MSRP $' + price"></p>
         </div>
     </div>
 </script>

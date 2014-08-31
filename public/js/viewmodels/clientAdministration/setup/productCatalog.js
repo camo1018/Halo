@@ -1,31 +1,31 @@
-function ProductCatalogViewmodel() {
+function ProductCatalogViewmodel(categories, products, resellers) {
     var self = this;
 
-    self.categories = [
-        { name: 'Caskets', id: 'caskets' },
-        { name: 'Vases', id: 'vases' }
-    ];
+    self.categories = ko.observableArray(categories);
+    self.products = ko.observableArray(products);
 
-    self.products = ko.observableArray([
-        { name: 'Test 1', value: '5500', imgUrl: '/img/image.png' },
-        { name: 'Test 2', value: '4000', imgUrl: '/img/image.png' },
-        { name: 'Test 3', value: '2555', imgUrl: '/img/image.png' },
-        { name: 'Test 4', value: '1100', imgUrl: '/img/image.png' },
-        { name: 'Test 5', value: '2555', imgUrl: '/img/image.png' },
-        { name: 'Test 6', value: '2576', imgUrl: '/img/image.png' },
-        { name: 'Test 7', value: '5129', imgUrl: '/img/image.png' },
-        { name: 'Test 8', value: '1000', imgUrl: '/img/image.png' }
-    ]);
+    self.resellers = ko.observableArray(resellers);
+    self.currentReseller = ko.observable(resellers[0]);
 
-    self.resellers = ko.observableArray([
-        { name: 'Batesville Casket Company', id: 'batesville' },
-        { name: 'Atlanta Casket Company', id: 'atlanta' }
-    ]);
-
+    self.uploadCategory = ko.observable(categories[0].stepName);
     self.currentCategoryIndex = ko.observable(0);
 
     self.setCategory = function(index) {
         self.currentCategoryIndex(index);
+        var params = { type: categories[self.currentCategoryIndex()].stepHeaderName, reseller: self.currentReseller().id };
+        $.get('/clientAdministration/setup/getProducts', params, function(products) {
+            self.products(products);
+            self.refreshMasonry();
+        });
+    };
+
+    self.setReseller = function(index) {
+        self.currentReseller(self.resellers()[index]);
+        var params = { type: categories[self.currentCategoryIndex()].stepHeaderName, reseller: self.currentReseller().id };
+        $.get('/clientAdministration/setup/getProducts', params, function(products) {
+            self.products(products);
+            self.refreshMasonry();
+        })
     };
 
     self.refreshMasonry = function() {
@@ -33,8 +33,8 @@ function ProductCatalogViewmodel() {
             masonry.masonry('reloadItems');
             masonry.masonry('layout');
         }
-    }
+    };
 
     self.stepNumber = ko.observable(2);
+    self.refreshMasonry();
 }
-var productCatalogViewmodel = new ProductCatalogViewmodel();

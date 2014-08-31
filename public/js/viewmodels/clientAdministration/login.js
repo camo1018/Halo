@@ -22,4 +22,3 @@ function LoginViewmodel() {
         });
     };
 }
-var loginViewmodel = new LoginViewmodel();

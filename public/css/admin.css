@@ -592,6 +592,14 @@ hr {
     display: inline-block;
 }
 
+.catalog-detail-product-container .catalog-detail-product-upload-button-container {
+    position: absolute;
+
+    top: 400px;
+    left: 850px;
+    width: 150px;
+}
+
 .company-message-panel-image {
     margin-top: 10px;
     display: inline-block;

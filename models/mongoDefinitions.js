@@ -4,6 +4,7 @@ var productCatalogService = require('./productCatalog/service.js');
 
 exports.ProductCatalog = {
     Product: productCatalogProduct.Product,
+    Reseller: productCatalogProduct.Reseller,
     Service: productCatalogService.Service,
     ServiceStep: productCatalogService.ServiceStep
 }

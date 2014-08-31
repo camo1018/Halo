@@ -14,4 +14,3 @@ function PreviewViewmodel() {
 
     self.stepNumber = ko.observable(3);
 }
-var previewViewmodel = new PreviewViewmodel();

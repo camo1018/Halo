@@ -31,4 +31,3 @@ function RegistrationViewmodel() {
         });
     };
 }
-var registrationViewmodel = new RegistrationViewmodel();

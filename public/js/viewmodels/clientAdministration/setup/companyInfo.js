@@ -23,4 +23,3 @@ function CompanyInfoViewmodel() {
         });
     };
 }
-var companyInfoViewmodel = new CompanyInfoViewmodel();

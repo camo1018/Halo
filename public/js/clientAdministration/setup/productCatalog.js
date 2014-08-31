@@ -1,9 +1,25 @@
 /**
  * Created by Paul on 7/17/2014.
  */
-ko.applyBindings(productCatalogViewmodel);
+$.get('/clientAdministration/setup/getCategories', null, function(categories) {
+    $.get('/clientAdministration/setup/getResellers', null, function(resellers) {
+        var params = { type: categories[0].stepHeaderName, reseller: resellers[0].id };
+        $.get('/clientAdministration/setup/getProducts', params, function(products) {
+            var productCatalogViewmodel = new ProductCatalogViewmodel(categories, products, resellers);
+            ko.applyBindings(productCatalogViewmodel);
+        });
+    });
+});
 
 var masonry = $('#catalog-detail-product-container').masonry({
     itemSelector: '.catalog-detail-panel-product',
-    gutter: 50
+    gutter: 50,
+    visibleStyle: {
+        opacity: 1,
+        transform: 'scale(1)'
+    },
+    hiddenStyle: {
+        opacity: 0,
+        transform: 'scale(0.001)'
+    }
 });
