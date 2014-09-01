@@ -21,4 +21,8 @@ function LoginViewmodel() {
             }
         });
     };
+
+    self.register = function() {
+        window.location = "/clientAdministration/registration";
+    }
 }
