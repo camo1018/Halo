@@ -7,7 +7,7 @@ function LoginViewmodel() {
     self.submitLogin = function() {
         $('#login-error').addClass('not-visible');
 
-        var params = { username: self.username, password: self.password };
+        var params = { username: self.username, password: Sha1.hash(self.password()) };
         $.post('/actions/clientAdministration/login', params, function(data) {
             switch (data) {
                 case 'login-fail':

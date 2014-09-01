@@ -9,7 +9,7 @@ function RegistrationViewmodel() {
         $('#name-empty-error, #name-exists-error, #password-empty-error, #password-mismatch-error').addClass('not-displayed');
 
 
-        var params = { username: self.username, password: self.password, passwordConfirm: self.passwordConfirm };
+        var params = { username: self.username, password: Sha1.hash(self.password()), passwordConfirm: Sha1.hash(self.passwordConfirm()) };
         $.post('/actions/clientAdministration/register', params, function(data) {
             switch (data) {
                 case 'name-empty-error':
