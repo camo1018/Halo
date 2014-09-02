@@ -367,6 +367,8 @@ hr {
 .company-message-panel-image {
     margin-top: 10px;
     display: inline-block;
+    height: 200px;
+    width: 300px;
 }
 
 .company-finish-button {

@@ -68,9 +68,12 @@
                 <div class="pull-left">
                     <input type="button" class="company-message-panel-rotate left">
                     <input type="button" class="company-message-panel-rotate right">
-                    <p><input type="button" class="btn" value="Upload Logo"></p>
+                    <p>
+                        <input type="button" class="btn" value="Upload Logo" data-bind="click: promptUpload">
+                        <input type="file" id="logo-file" class="not-visible" data-bind="event: { change: function() { submitLogo($element.files[0]) } }">
+                    </p>
                 </div>
-                <img class="company-message-panel-image" src="/img/image.png">
+                <img class="company-message-panel-image" id="logo-image" src="/img/image.png">
                 <div class="company-finish-button">
                     <input type="button" class="step-finish-button btn btn-lg pull-right" value="Go to Step 2" data-bind="click: submit">
                 </div>

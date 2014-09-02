@@ -8,6 +8,6 @@ var companyInfoSchema = mongoose.Schema({
     contactPhone: String,
 
     welcomeMessage: String,
-    companyLogoUrl: String
+    companyLogoContent: String
 });
 exports.CompanyInfo = mongoose.model('companyInfo', companyInfoSchema);

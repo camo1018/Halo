@@ -14,7 +14,7 @@ module.exports = function(app, modules) {
         var phoneNumber = req.body.phoneNumber;
 
         var welcomeMessage = req.body.welcomeMessage;
-        var companyLogoUrl = req.body.companyLogoUrl;
+        var companyLogoContent = req.body.companyLogoContent;
 
         var companyInfo = new modules.MongoDefinitions.ClientAdmin.CompanyInfo({
             username: username,
@@ -24,7 +24,7 @@ module.exports = function(app, modules) {
             contactPhone: phoneNumber,
 
             welcomeMessage: welcomeMessage,
-            companyLogoUrl: companyLogoUrl
+            companyLogoContent: companyLogoContent
         })
         companyInfo.save(function(err) {
             if (err)
