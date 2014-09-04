@@ -126,6 +126,7 @@ async.series([
 
         // Casket
         var brownCasket = new MongoDefinitions.ProductCatalog.Product( {
+            id: 'browncasket',
             type: 'casket',
             name: 'Brown Casket',
             imageUrl: 'http://www.damianofuneralhome.com/Malorie_6036340_PC_O.jpg',
@@ -135,6 +136,7 @@ async.series([
         brownCasket.save();
 
         var grayCasket = new MongoDefinitions.ProductCatalog.Product({
+            id: 'graycasket',
             type: 'casket',
             name: 'Gray Casket',
             imageUrl: 'http://3.bp.blogspot.com/_kx-6LfX6YXk/TVSuLSqfWhI/AAAAAAAAAD0/mII7Iuebqcw/s1600/casket.jpg',
@@ -144,6 +146,7 @@ async.series([
         grayCasket.save();
 
         var veteranCasket = new MongoDefinitions.ProductCatalog.Product({
+            id: 'veterancasket',
             type: 'casket',
             name: 'Veteran Casket',
             imageUrl: 'http://www.veterancaskets.com/store/images/D/air-force-casket-full.jpg',
@@ -154,6 +157,7 @@ async.series([
 
         // Vault
         var someVault = new MongoDefinitions.ProductCatalog.Product({
+            id: 'purplevault',
             type: 'vault',
             name: 'Purple Vault',
             imageUrl: 'http://www.image.com',
@@ -163,6 +167,7 @@ async.series([
         someVault.save();
 
         var steelVault = new MongoDefinitions.ProductCatalog.Product({
+            id: 'steelvault',
             type: 'vault',
             name: 'Steel Vault',
             imageUrl: 'http://www.austinfuneralservice.com/wp-content/uploads/04-Stainless-Steel-Triune.jpg',

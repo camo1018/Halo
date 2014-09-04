@@ -1,10 +1,10 @@
 /**
  * Created by Paul on 7/17/2014.
  */
-$.get('/clientAdministration/setup/getCategories', null, function(categories) {
-    $.get('/clientAdministration/setup/getResellers', null, function(resellers) {
+$.get('/actions/clientAdministration/setup/getCategories', null, function(categories) {
+    $.get('/actions/clientAdministration/setup/getResellers', null, function(resellers) {
         var params = { type: categories[0].stepHeaderName, reseller: resellers[0].id };
-        $.get('/clientAdministration/setup/getProducts', params, function(products) {
+        $.get('/actions/clientAdministration/setup/getProducts', params, function(products) {
             var productCatalogViewmodel = new ProductCatalogViewmodel(categories, products, resellers);
             ko.applyBindings(productCatalogViewmodel);
         });

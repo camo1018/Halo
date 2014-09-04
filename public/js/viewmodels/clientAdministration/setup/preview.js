@@ -12,5 +12,9 @@ function PreviewViewmodel() {
         { name: 'Test 8', price: '1000', imgUrl: '/img/image.png' }
     ];
 
+    self.publish = function() {
+        window.location = '/clientAdministration/setup/published';
+    }
+
     self.stepNumber = ko.observable(3);
 }

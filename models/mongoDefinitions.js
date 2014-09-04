@@ -12,10 +12,12 @@ exports.ProductCatalog = {
 /* Client Administration Definitions */
 var clientAdminUser = require('./clientAdministration/user.js');
 var clientAdminCompanyInfo = require('./clientAdministration/companyInfo.js');
+var clientAdminProductCatalog = require('./clientAdministration/productCatalog.js');
 
 exports.ClientAdmin = {
     User: clientAdminUser.User,
-    CompanyInfo: clientAdminCompanyInfo.CompanyInfo
+    CompanyInfo: clientAdminCompanyInfo.CompanyInfo,
+    SelectedProduct: clientAdminProductCatalog.SelectedProduct
 }
 
 

@@ -1,8 +1,20 @@
+function Product(product) {
+    var self = this;
+
+    self.product = product;
+    self.isSelected = ko.observable(false);
+}
+
 function ProductCatalogViewmodel(categories, products, resellers) {
     var self = this;
 
+    self.products = ko.observableArray();
+
+    for(var i = 0; i < products.length; i++) {
+        self.products.push(new Product(products[i]));
+    }
+
     self.categories = ko.observableArray(categories);
-    self.products = ko.observableArray(products);
 
     self.resellers = ko.observableArray(resellers);
     self.currentReseller = ko.observable(resellers[0]);
@@ -12,6 +24,9 @@ function ProductCatalogViewmodel(categories, products, resellers) {
 
     self.setCategory = function(index) {
         self.currentCategoryIndex(index);
+        if (self.currentCategoryIndex() < 0)
+            return;
+
         var params = { type: categories[self.currentCategoryIndex()].stepHeaderName, reseller: self.currentReseller().id };
         self.getProducts(params);
     };
@@ -23,8 +38,12 @@ function ProductCatalogViewmodel(categories, products, resellers) {
     };
 
     self.getProducts = function(params) {
-        $.get('/clientAdministration/setup/getProducts', params, function(products) {
-            self.products(products);
+        $.get('/actions/clientAdministration/setup/getProducts', params, function(products) {
+            var productsObservable = new Array();
+            for (var i = 0; i < products.length; i++) {
+                productsObservable.push(new Product(products[i]));
+            }
+            self.products(productsObservable);
             self.refreshMasonry();
         });
     }
@@ -36,6 +55,23 @@ function ProductCatalogViewmodel(categories, products, resellers) {
         }
     };
 
+    self.toggleProduct = function(product) {
+        var params = { productId: product.id };
+        if (product.isSelected() === false) {
+            $.post('/actions/clientAdministration/setup/removeProduct', params, function() {
+                product.isSelected(false);
+            });
+        }
+        else {
+            $.post('/actions/clientAdministration/setup/selectProduct', params, function() {
+                product.isSelected(true);
+            });
+        }
+    };
+
+    self.nextStep = function() {
+        window.location = '/clientAdministration/setup/preview';
+    }
+
     self.stepNumber = ko.observable(2);
-    self.refreshMasonry();
 }

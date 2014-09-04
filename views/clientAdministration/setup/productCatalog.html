@@ -98,17 +98,17 @@
         </div>
     </div>
     <div class="catalog-finish-div">
-        <input type="button" class="step-finish-button btn btn-lg pull-right" value="Go to Step 3">
+        <input type="button" class="step-finish-button btn btn-lg pull-right" data-bind="click: nextStep" value="Go to Step 3">
     </div>
 </div>
 
 <script type="text/html" id="product-template">
     <div class="catalog-detail-panel-product">
-        <input class="catalog-detail-product-checkbox" type="checkbox" />
-        <img class="catalog-detail-product-image" data-bind="attr: { src: imageUrl }" />
+        <input class="catalog-detail-product-checkbox" type="checkbox" data-bind="click: $root.toggleProduct" />
+        <img class="catalog-detail-product-image" data-bind="attr: { src: product.imageUrl }" />
         <div class="catalog-detail-product-info-wrapper">
-            <p class="text-muted bold" data-bind="text: name"></p>
-            <p data-bind="text: 'MSRP $' + price"></p>
+            <p class="text-muted bold" data-bind="text: product.name"></p>
+            <p data-bind="text: 'MSRP $' + product.price"></p>
         </div>
     </div>
 </script>
